@@ -4,10 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Anupa Dinuranga - Portfolio</title>
-    <meta
-      name="description"
-      content="Personal portfolio of Anupa Dinuranga - Web Developer, Bug Hunter, and CTF Player specializing in Cybersecurity and DevOps"
-    />
     <link rel="stylesheet" href="styles.css" />
     <link
       rel="stylesheet"
@@ -63,8 +59,7 @@
     </div>
 
     <!-- Hero Section -->
-    <section id="hero" class="hero-section">
-      <!-- Video Container -->
+    <section id="hero" class="hero-mobile">
       <div class="video-background">
         <video autoplay muted loop id="hero-video">
           <source src="robo.mp4" type="video/mp4" />
@@ -73,69 +68,63 @@
         <div class="hero-overlay"></div>
       </div>
 
-      <!-- Content Container (overlay on video) -->
-      <div class="hero-content-container">
-        <!-- Profile Section (left side on desktop) -->
-        <div class="profile-section">
-          <div class="profile-image">
-            <img src="https://via.placeholder.com/180" alt="Anupa Dinuranga" />
-            <div class="status-dot"></div>
-          </div>
-          <h2 class="profile-name">Anupa Dinuranga</h2>
-          <p class="profile-title">
-            <span class="prefix">I'M </span>
-            <span class="typing-text"></span>
-            <span class="cursor">|</span>
-          </p>
-          <div class="social-links">
-            <a href="#" class="social-link"
-              ><i class="fa-brands fa-linkedin-in"></i
-            ></a>
-            <a href="#" class="social-link"
-              ><i class="fa-brands fa-github"></i
-            ></a>
-            <a href="#" class="social-link"
-              ><i class="fa-brands fa-stack-overflow"></i
-            ></a>
-            <a href="#" class="social-link"
-              ><i class="fa-brands fa-twitter"></i
-            ></a>
-          </div>
-          <div class="profile-info">
-            <div class="info-item">
-              <span class="info-label">RESIDENCE:</span>
-              <span class="info-value">SRI LANKA</span>
-            </div>
-            <div class="info-item">
-              <span class="info-label">CITY:</span>
-              <span class="info-value">HOMAGAMA</span>
-            </div>
-            <div class="info-item">
-              <span class="info-label">AGE:</span>
-              <span class="info-value">23</span>
-            </div>
-          </div>
-          <a href="#contact" class="contact-button"
-            >CONTACT ME <i class="fa-solid fa-envelope"></i
-          ></a>
-        </div>
-
-        <!-- Hero Content (right side on desktop) -->
-        <div class="hero-content-mobile">
-          <h1 class="hero-title">Discover my portfolio!</h1>
-          <a href="#" class="video-resume-btn">
-            VIDEO RESUME <i class="fa-solid fa-play"></i>
-          </a>
-        </div>
-      </div>
-
-      <!-- Scroll Indicator -->
+      <!-- Scroll Indicator (move here) -->
       <div class="scroll-indicator">
         <button class="scroll-text" id="scroll-down-btn">SCROLL DOWN</button>
         <div class="scroll-line"></div>
       </div>
 
-      <!-- Stats Section (below video) -->
+      <div class="hero-content-mobile">
+        <h1 class="hero-title">Discover my portfolio!</h1>
+        <a href="#" class="video-resume-btn">
+          VIDEO RESUME <i class="fa-solid fa-play"></i>
+        </a>
+      </div>
+
+      <div class="profile-section">
+        <div class="profile-image">
+          <img src="https://via.placeholder.com/180" alt="Anupa Dinuranga" />
+          <div class="status-dot"></div>
+        </div>
+        <h2 class="profile-name">Anupa Dinuranga</h2>
+        <p class="profile-title">
+          <span class="prefix">I'M </span>
+          <span class="typing-text"></span>
+          <span class="cursor">|</span>
+        </p>
+        <div class="social-links">
+          <a href="#" class="social-link"
+            ><i class="fa-brands fa-linkedin-in"></i
+          ></a>
+          <a href="#" class="social-link"
+            ><i class="fa-brands fa-github"></i
+          ></a>
+          <a href="#" class="social-link"
+            ><i class="fa-brands fa-stack-overflow"></i
+          ></a>
+          <a href="#" class="social-link"
+            ><i class="fa-brands fa-twitter"></i
+          ></a>
+        </div>
+        <div class="profile-info">
+          <div class="info-item">
+            <span class="info-label">RESIDENCE:</span>
+            <span class="info-value">SRI LANKA</span>
+          </div>
+          <div class="info-item">
+            <span class="info-label">CITY:</span>
+            <span class="info-value">HOMAGAMA</span>
+          </div>
+          <div class="info-item">
+            <span class="info-label">AGE:</span>
+            <span class="info-value">23</span>
+          </div>
+        </div>
+        <a href="#contact" class="contact-button"
+          >CONTACT ME <i class="fa-solid fa-envelope"></i
+        ></a>
+      </div>
+
       <div class="stats-section">
         <div class="stats-container">
           <div class="stat-card">
@@ -182,13 +171,16 @@
       </div>
       <div class="video-container">
         <div class="video-placeholder">
-          <img
-            src="https://via.placeholder.com/800x450/1a1025/ffffff?text=COMING+SOON"
-            alt="Coming Soon"
-          />
-          <div class="play-button">
-            <i class="fa-solid fa-play"></i>
-          </div>
+          <iframe
+            width="100%"
+            height="100%"
+            src="https://www.youtube.com/embed/LMlCN6_vUvs"
+            title="Video Resume"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            style="position:absolute;top:0;left:0;width:100%;height:100%;border-radius:15px;"
+          ></iframe>
         </div>
       </div>
     </section>
@@ -612,31 +604,17 @@
 
         <div class="contact-form-container">
           <h3 class="form-title">Get in touch</h3>
-          <form class="contact-form" id="contactForm">
+          <form class="contact-form">
             <div class="form-group">
-              <input
-                type="text"
-                placeholder="Name"
-                class="form-control"
-                id="name"
-                required
-              />
+              <input type="text" placeholder="Name" class="form-control" />
             </div>
             <div class="form-group">
-              <input
-                type="email"
-                placeholder="Email"
-                class="form-control"
-                id="email"
-                required
-              />
+              <input type="email" placeholder="Email" class="form-control" />
             </div>
             <div class="form-group">
               <textarea
                 placeholder="Message"
                 class="form-control form-textarea"
-                id="message"
-                required
               ></textarea>
             </div>
             <div class="form-footer">
@@ -651,11 +629,6 @@
         </div>
       </div>
     </section>
-
-    <!-- Back to top button -->
-    <div class="back-to-top">
-      <i class="fa-solid fa-chevron-up"></i>
-    </div>
 
     <!-- Footer -->
     <footer>

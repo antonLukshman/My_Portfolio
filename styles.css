@@ -298,8 +298,6 @@ html[data-theme="light"] .dark-icon {
   position: relative;
   min-height: 100vh;
   padding-top: 80px;
-  display: flex;
-  flex-direction: column;
 }
 
 .video-background {
@@ -309,7 +307,7 @@ html[data-theme="light"] .dark-icon {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  z-index: 0;
+  z-index: -1;
 }
 
 .video-background video {
@@ -324,11 +322,11 @@ html[data-theme="light"] .dark-icon {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(26, 16, 37, 0.85);
+  background-color: rgba(26, 16, 37, 0.7); /* Ensures overlay for dark theme */
+/* z-index: 1;
 } */
-
-html[data-theme="light"] .hero-overlay {
-  background-color: rgba(245, 245, 247, 0.7);
+*/ html[data-theme="light"] .hero-overlay {
+  background-color: rgba(245, 245, 247, 0.7); /* Overlay for light theme */
 }
 
 .hero-content-mobile {
@@ -752,7 +750,6 @@ html[data-theme="light"] .section-number {
   border-radius: 15px;
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
 }
 
 .portfolio-item:hover {
@@ -1233,303 +1230,98 @@ html[data-theme="light"] .footer-credit {
   color: var(--accent-color);
 }
 
-/* Back to top button */
-.back-to-top {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background-color: var(--accent-color);
-  color: var(--primary-color-dark);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-  z-index: 99;
-}
-
-.back-to-top.visible {
-  opacity: 1;
-  visibility: visible;
-}
-
-.back-to-top:hover {
-  transform: translateY(-5px);
-}
-
-/* Form validation styles */
-.form-control.error {
-  border: 1px solid #ff6b6b;
-}
-
-.form-error-message {
-  color: #ff6b6b;
-  font-size: 0.8rem;
-  margin-top: 0.3rem;
-}
-
-/* Mobile-specific hero section styling */
-@media (max-width: 767px) {
-  /* Restructure hero section for mobile */
-  #hero {
-    flex-direction: column;
-    padding-top: 80px; /* Ensure space for the fixed header */
-  }
-
-  /* Hero content container */
-  .hero-content-container {
-    position: static;
-    display: block;
-    height: auto;
-  }
-
-  /* Video container styling */
-  .video-background {
-    position: relative; /* Change from absolute to relative */
-    height: 40vh; /* 40% of viewport height */
-    width: 100%;
-    margin: 0;
-    border-radius: 0;
-    overflow: hidden;
-    z-index: 0;
-  }
-
-  /* Video element styling */
-  .video-background video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  /* Hero overlay adjustment */
-  .hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 0;
-    background-color: rgba(
-      26,
-      16,
-      37,
-      0.7
-    ); /* Darken for better text visibility */
-  }
-
-  /* Position content over the video */
-  .hero-content-mobile {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 40vh; /* Match the video height */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    z-index: 1; /* Ensure text is above video */
-    padding: 0 1.5rem;
-  }
-
-  /* Profile section position */
-  .profile-section {
-    margin-top: 0; /* Reset */
-    width: 100%;
-    max-width: 100%;
-    border-radius: 0;
-    padding-top: 2rem;
-    background-color: var(--secondary-bg);
-    backdrop-filter: none;
-    border: none;
-  }
-
-  /* Adjust scroll indicator for mobile */
-  .scroll-indicator {
-    display: none; /* Optional: hide on mobile or reposition */
-  }
-
-  /* Ensure text is visible on video background */
-  .hero-title {
-    font-size: 2rem;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-    margin-bottom: 1rem;
-  }
-
-  .video-resume-btn {
-    background-color: rgba(0, 0, 0, 0.4);
-    border: 2px solid var(--accent-color);
-    color: #fff;
-    padding: 0.7rem 1.2rem;
-  }
-
-  /* Stats section full width on mobile */
-  .stats-section {
-    width: 100%;
-    margin: 0;
-    padding: 2rem 1rem;
-  }
-}
-
 /* Desktop & Tablet Styles */
 @media (min-width: 768px) {
-  /* Hero section layout for desktop */
-  #hero {
-    display: flex;
-    flex-direction: column;
-    padding-top: 80px;
-    min-height: 100vh;
-  }
-
-  /* Video styling for desktop - 90% width */
-  .video-background {
-    position: relative;
-    width: 90%;
-    height: 85vh; /* Tall enough to fit content without cropping */
-    margin: 0 auto;
-    border-radius: 15px;
-    overflow: hidden;
-    z-index: 0;
-  }
-
-  .video-background video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  /* Overlay layout for desktop */
-  .hero-overlay {
-    border-radius: 15px;
-    background-color: rgba(26, 16, 37, 0.75);
-  }
-
-  /* Profile and content layout */
-  .hero-content-container {
-    position: absolute;
-    top: 80px; /* Adjust based on your header height */
-    left: 0;
-    width: 100%;
-    height: 85vh;
-    display: flex;
-    z-index: 1;
-    padding: 0 5%;
-  }
-
-  /* Text content side */
-  .hero-content-mobile {
-    flex: 3;
-    padding: 8rem 2rem 0 0;
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-  }
-
-  /* Title sizing for desktop */
-  .hero-title {
-    font-size: 4rem;
-    margin-bottom: 2rem;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-  }
-
-  /* Button styling enhancement */
-  .video-resume-btn {
-    padding: 1rem 2rem;
-    font-size: 1.1rem;
-    border: 2px solid var(--accent-color);
-    background-color: rgba(0, 0, 0, 0.4);
-  }
-
-  /* Profile section positioning */
   .profile-section {
-    flex: 2;
+    flex: 1;
     max-width: 350px;
-    margin: 3.5rem 0 0 0;
-    background-color: rgba(36, 21, 53, 0.85);
-    border: 1px solid rgba(138, 79, 255, 0.2);
-    backdrop-filter: blur(5px);
+    margin-top: 2.5rem; /* Add this line for top gap */
+    margin-right: auto;
+    margin-left: auto;
   }
 
-  html[data-theme="light"] .profile-section {
-    background-color: rgba(245, 245, 247, 0.85);
-    border: 1px solid rgba(100, 37, 208, 0.2);
+  .hero-mobile {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row-reverse; /* Swap the order */
+    padding: 7rem 5% 5rem;
   }
 
-  /* Stats section below video */
+  .hero-content-mobile {
+    flex: 2;
+    padding: 2rem 3rem;
+    text-align: left;
+  }
+
+  .profile-section {
+    flex: 1;
+    max-width: 350px;
+  }
+
   .stats-section {
-    width: 90%;
-    margin: 1rem auto 2rem;
-    padding: 0;
+    width: 100%;
+    padding: 2rem 5%;
   }
 
   .stats-container {
     flex-direction: row;
     justify-content: space-between;
-    gap: 1.5rem;
   }
 
   .stat-card {
     flex: 1;
   }
-}
 
-.hero-title {
-  font-size: 4rem;
-}
+  .hero-title {
+    font-size: 4rem;
+  }
 
-section {
-  padding: 5rem 5%;
-}
+  section {
+    padding: 5rem 5%;
+  }
 
-.section-title {
-  font-size: 2rem;
-}
+  .section-title {
+    font-size: 2rem;
+  }
 
-.skills-container {
-  flex-direction: row;
-}
+  .skills-container {
+    flex-direction: row;
+  }
 
-.skills-group {
-  flex: 1;
-}
+  .skills-group {
+    flex: 1;
+  }
 
-.portfolio-container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
-}
+  .portfolio-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
 
-.journey-container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
-}
+  .journey-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
 
-.badges-container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
-}
+  .badges-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
 
-.contact-info {
-  flex-direction: row;
-}
+  .contact-info {
+    flex-direction: row;
+  }
 
-.contact-group {
-  flex: 1;
-}
+  .contact-group {
+    flex: 1;
+  }
 
-.footer-content {
-  flex-direction: row;
-  justify-content: space-between;
+  .footer-content {
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }
 
 @media (min-width: 992px) {
@@ -1574,6 +1366,92 @@ section {
 
   .quote-text {
     padding: 1rem;
+  }
+
+  /* Restructure hero section for mobile */
+  #hero {
+    flex-direction: column;
+    padding-top: 80px; /* Ensure space for the fixed header */
+  }
+
+  /* Video container styling */
+  .video-background {
+    position: relative;
+    width: 100%;
+    /* Remove height: 40vh; */
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+    overflow: hidden;
+    z-index: 0;
+    border-radius: 15px; /* Rounded edges for video frame */
+  }
+
+  /* Video element styling */
+  .video-background video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px; /* Rounded edges for video itself */
+  }
+
+  /* Hero overlay adjustment */
+  .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(
+      26,
+      16,
+      37,
+      0.7
+    ); /* Darken for better text visibility */
+  }
+
+  /* Position content over the video */
+  .hero-content-mobile {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Match the video-background height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1; /* Ensure text is above video */
+    padding: 0 1.5rem;
+  }
+
+  /* Profile section position */
+  .profile-section {
+    margin-top: 2vh; /* Less gap */
+    width: 100%;
+    max-width: 100%;
+    border-radius: 0;
+    padding-top: 2rem;
+  }
+
+  /* Adjust scroll indicator for mobile */
+  .scroll-indicator {
+    display: none; /* Optional: hide on mobile or reposition */
+  }
+
+  /* Ensure text is visible on video background */
+  .hero-title {
+    font-size: 2rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    margin-bottom: 1rem;
+  }
+
+  .video-resume-btn {
+    background-color: rgba(0, 0, 0, 0.4);
+    border: 2px solid var(--accent-color);
+    color: #fff;
+    padding: 0.7rem 1.2rem;
   }
 }
 

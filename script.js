@@ -56,7 +56,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
       document.documentElement.setAttribute("data-theme", newTheme);
       localStorage.setItem("theme", newTheme);
-      setTimeout(adjustHeroLayout, 50); // Update layout after theme change
     });
   });
 
@@ -235,176 +234,28 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Back to top button functionality
-  const backToTopBtn = document.querySelector(".back-to-top");
-  if (backToTopBtn) {
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 500) {
-        backToTopBtn.classList.add("visible");
-      } else {
-        backToTopBtn.classList.remove("visible");
-      }
-    });
-
-    backToTopBtn.addEventListener("click", () => {
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth",
-      });
-    });
-  }
-
-  // Form validation
-  const contactForm = document.getElementById("contactForm");
-  if (contactForm) {
-    contactForm.addEventListener("submit", function (e) {
-      e.preventDefault();
-      let hasError = false;
-
-      // Reset previous errors
-      const errorMessages = document.querySelectorAll(".form-error-message");
-      errorMessages.forEach((msg) => msg.remove());
-      const errorInputs = document.querySelectorAll(".form-control.error");
-      errorInputs.forEach((input) => input.classList.remove("error"));
-
-      // Validate name
-      const nameInput = document.getElementById("name");
-      if (!nameInput.value.trim()) {
-        displayError(nameInput, "Please enter your name");
-        hasError = true;
-      }
-
-      // Validate email
-      const emailInput = document.getElementById("email");
-      if (!validateEmail(emailInput.value)) {
-        displayError(emailInput, "Please enter a valid email address");
-        hasError = true;
-      }
-
-      // Validate message
-      const messageInput = document.getElementById("message");
-      if (!messageInput.value.trim()) {
-        displayError(messageInput, "Please enter your message");
-        hasError = true;
-      }
-
-      if (!hasError) {
-        // Form is valid - would send data to server in real implementation
-        alert("Form submitted successfully! (This is a demo alert)");
-        contactForm.reset();
-      }
-    });
-
-    function validateEmail(email) {
-      const re =
-        /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-      return re.test(String(email).toLowerCase());
-    }
-
-    function displayError(input, message) {
-      input.classList.add("error");
-      const errorElement = document.createElement("div");
-      errorElement.className = "form-error-message";
-      errorElement.innerText = message;
-      input.parentNode.appendChild(errorElement);
-    }
-  }
-
-  // Mobile Hero layout adjustment
-  function adjustHeroLayout() {
-    const isMobile = window.innerWidth <= 767;
-    const videoBackground = document.querySelector(".video-background");
-    const heroContent = document.querySelector(".hero-content-mobile");
-    const heroContentContainer = document.querySelector(
-      ".hero-content-container"
-    );
-    const profileSection = document.querySelector(".profile-section");
-    const statsSection = document.querySelector(".stats-section");
-
-    if (isMobile) {
-      // Mobile specific adjustments
-      if (videoBackground) {
-        videoBackground.style.height = "40vh";
-        videoBackground.style.width = "100%";
-        videoBackground.style.borderRadius = "0";
-      }
-
-      if (heroContent) {
-        heroContent.style.position = "absolute";
-        heroContent.style.top = "0";
-        heroContent.style.left = "0";
-        heroContent.style.height = "40vh";
-        heroContent.style.width = "100%";
-        heroContent.style.zIndex = "1";
-        heroContent.style.textAlign = "center";
-        heroContent.style.alignItems = "center";
-      }
-
-      if (profileSection) {
-        profileSection.style.backgroundColor = "var(--secondary-bg)";
-        profileSection.style.width = "100%";
-        profileSection.style.maxWidth = "100%";
-        profileSection.style.borderRadius = "0";
-        profileSection.style.backdropFilter = "none";
-        profileSection.style.border = "none";
-      }
-
-      if (statsSection) {
-        statsSection.style.width = "100%";
-        statsSection.style.margin = "0";
-      }
-    } else {
-      // Desktop layout adjustments
-      if (videoBackground) {
-        videoBackground.style.width = "90%";
-        videoBackground.style.height = "85vh";
-        videoBackground.style.margin = "0 auto";
-        videoBackground.style.borderRadius = "15px";
-      }
-
-      if (heroContentContainer) {
-        heroContentContainer.style.display = "flex";
-        heroContentContainer.style.height = "85vh";
-      }
-
-      if (heroContent) {
-        heroContent.style.position = "relative";
-        heroContent.style.top = "auto";
-        heroContent.style.left = "auto";
-        heroContent.style.flex = "3";
-        heroContent.style.textAlign = "left";
-        heroContent.style.alignItems = "flex-start";
-      }
-
-      if (profileSection) {
-        profileSection.style.backgroundColor = "rgba(36, 21, 53, 0.85)";
-        profileSection.style.backdropFilter = "blur(5px)";
-        profileSection.style.border = "1px solid rgba(138, 79, 255, 0.2)";
-        profileSection.style.flex = "2";
-        profileSection.style.maxWidth = "350px";
-        profileSection.style.margin = "3.5rem 0 0 0";
-        profileSection.style.borderRadius = "15px";
-
-        // Check theme for light mode adjustments
-        const theme = document.documentElement.getAttribute("data-theme");
-        if (theme === "light") {
-          profileSection.style.backgroundColor = "rgba(245, 245, 247, 0.85)";
-          profileSection.style.border = "1px solid rgba(100, 37, 208, 0.2)";
-        }
-      }
-
-      if (statsSection) {
-        statsSection.style.width = "90%";
-        statsSection.style.margin = "1rem auto 2rem";
-      }
-    }
-  }
-
-  // Run on load and window resize
-  window.addEventListener("resize", adjustHeroLayout);
   adjustHeroLayout();
 });
 
-// Run on load and window resize
 window.addEventListener("resize", adjustHeroLayout);
-adjustHeroLayout();
+
+function adjustHeroLayout() {
+  const isMobile = window.innerWidth <= 767;
+  const heroVideo = document.getElementById("hero-video");
+  const heroContent = document.querySelector(".hero-content-mobile");
+
+  if (isMobile) {
+    // Ensure proper mobile layout when screen size changes
+    if (heroVideo) {
+      heroVideo.style.objectFit = "cover";
+    }
+    if (heroContent) {
+      heroContent.style.height = "40vh";
+    }
+  } else {
+    // Reset styles for desktop view
+    if (heroContent) {
+      heroContent.style.height = "auto";
+    }
+  }
+}
