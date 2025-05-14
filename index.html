@@ -3,7 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Your Portfolio</title>
+    <title>Anupa Dinuranga - Portfolio</title>
+    <meta
+      name="description"
+      content="Personal portfolio of Anupa Dinuranga - Web Developer, Bug Hunter, and CTF Player specializing in Cybersecurity and DevOps"
+    />
     <link rel="stylesheet" href="styles.css" />
     <link
       rel="stylesheet"
@@ -19,8 +23,7 @@
           <a href="#hero" class="nav-item">HOME</a>
           <a href="#about" class="nav-item">ABOUT</a>
           <a href="#portfolio" class="nav-item">PORTFOLIO</a>
-          <a href="#skills" class="nav-item">SKILLS</a>
-          <a href="#certificates" class="nav-item">CERTIFICATES</a>
+          <a href="#resume" class="nav-item">RESUME</a>
           <a href="#contact" class="nav-item">CONTACT</a>
         </nav>
         <div class="right-actions">
@@ -45,8 +48,7 @@
         <a href="#hero" class="popup-item">HOME</a>
         <a href="#about" class="popup-item">ABOUT</a>
         <a href="#portfolio" class="popup-item">PORTFOLIO</a>
-        <a href="#skills" class="popup-item">SKILLS</a>
-        <a href="#certificates" class="popup-item">CERTIFICATES</a>
+        <a href="#resume" class="popup-item">RESUME</a>
         <a href="#contact" class="popup-item">CONTACT</a>
         <div class="popup-theme-toggle">
           <div class="theme-toggle">
@@ -60,78 +62,95 @@
       </div>
     </div>
 
-    <!-- Scroll Indicator -->
-    <div class="scroll-indicator">
-      <div class="scroll-text">SCROLL DOWN</div>
-      <div class="scroll-line"></div>
-    </div>
-
     <!-- Hero Section -->
-    <section id="hero">
-      <div class="profile-section">
-        <div class="profile-image">
-          <img src="/api/placeholder/400/400" alt="Profile Photo" />
-        </div>
-        <h2 class="profile-name">Your Name</h2>
-        <p class="profile-title">Full Stack Developer</p>
-        <div class="social-links">
-          <a href="#" class="social-link"
-            ><i class="fa-brands fa-linkedin-in"></i
-          ></a>
-          <a href="#" class="social-link"
-            ><i class="fa-brands fa-github"></i
-          ></a>
-          <a href="#" class="social-link"
-            ><i class="fa-brands fa-dribbble"></i
-          ></a>
-          <a href="#" class="social-link"
-            ><i class="fa-brands fa-twitter"></i
-          ></a>
-        </div>
-        <div class="profile-info">
-          <div class="info-item">
-            <span class="info-label">RESIDENCE:</span>
-            <span class="info-value">Your Country</span>
-          </div>
-          <div class="info-item">
-            <span class="info-label">CITY:</span>
-            <span class="info-value">Your City</span>
-          </div>
-          <div class="info-item">
-            <span class="info-label">AGE:</span>
-            <span class="info-value">Your Age</span>
-          </div>
-        </div>
-        <a href="#contact" class="contact-button"
-          >CONTACT ME <i class="fa-solid fa-envelope"></i
-        ></a>
+    <section id="hero" class="hero-section">
+      <!-- Video Container -->
+      <div class="video-background">
+        <video autoplay muted loop id="hero-video">
+          <source src="robo.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <div class="hero-overlay"></div>
       </div>
-      <div class="hero-content">
-        <p class="hero-subtitle">H3110 W0R1D!</p>
-        <h1 class="hero-title">Discover my portfolio!</h1>
-        <p class="hero-description">
-          I'm a passionate full-stack developer with expertise in building
-          secure, scalable, and user-friendly web applications. I combine
-          technical prowess with creative problem-solving to deliver exceptional
-          digital experiences.
-        </p>
-        <div class="hero-cta">
-          <a href="#portfolio" class="primary-btn"
-            >MY WORK <i class="fa-solid fa-arrow-right"></i
+
+      <!-- Content Container (overlay on video) -->
+      <div class="hero-content-container">
+        <!-- Profile Section (left side on desktop) -->
+        <div class="profile-section">
+          <div class="profile-image">
+            <img src="https://via.placeholder.com/180" alt="Anupa Dinuranga" />
+            <div class="status-dot"></div>
+          </div>
+          <h2 class="profile-name">Anupa Dinuranga</h2>
+          <p class="profile-title">
+            <span class="prefix">I'M </span>
+            <span class="typing-text"></span>
+            <span class="cursor">|</span>
+          </p>
+          <div class="social-links">
+            <a href="#" class="social-link"
+              ><i class="fa-brands fa-linkedin-in"></i
+            ></a>
+            <a href="#" class="social-link"
+              ><i class="fa-brands fa-github"></i
+            ></a>
+            <a href="#" class="social-link"
+              ><i class="fa-brands fa-stack-overflow"></i
+            ></a>
+            <a href="#" class="social-link"
+              ><i class="fa-brands fa-twitter"></i
+            ></a>
+          </div>
+          <div class="profile-info">
+            <div class="info-item">
+              <span class="info-label">RESIDENCE:</span>
+              <span class="info-value">SRI LANKA</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label">CITY:</span>
+              <span class="info-value">HOMAGAMA</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label">AGE:</span>
+              <span class="info-value">23</span>
+            </div>
+          </div>
+          <a href="#contact" class="contact-button"
+            >CONTACT ME <i class="fa-solid fa-envelope"></i
           ></a>
-          <a href="#about" class="secondary-btn">ABOUT ME</a>
         </div>
+
+        <!-- Hero Content (right side on desktop) -->
+        <div class="hero-content-mobile">
+          <h1 class="hero-title">Discover my portfolio!</h1>
+          <a href="#" class="video-resume-btn">
+            VIDEO RESUME <i class="fa-solid fa-play"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Scroll Indicator -->
+      <div class="scroll-indicator">
+        <button class="scroll-text" id="scroll-down-btn">SCROLL DOWN</button>
+        <div class="scroll-line"></div>
+      </div>
+
+      <!-- Stats Section (below video) -->
+      <div class="stats-section">
         <div class="stats-container">
-          <div class="stat-item">
-            <h3 class="stat-value">7</h3>
+          <div class="stat-card">
+            <h3 class="stat-value">5<span class="plus-sign">+</span></h3>
+            <div class="stat-divider"></div>
             <p class="stat-label">PROJECTS</p>
           </div>
-          <div class="stat-item">
-            <h3 class="stat-value">12</h3>
+          <div class="stat-card">
+            <h3 class="stat-value">15<span class="plus-sign">+</span></h3>
+            <div class="stat-divider"></div>
             <p class="stat-label">CERTIFICATES</p>
           </div>
-          <div class="stat-item">
-            <h3 class="stat-value">15</h3>
+          <div class="stat-card">
+            <h3 class="stat-value">20<span class="plus-sign">+</span></h3>
+            <div class="stat-divider"></div>
             <p class="stat-label">BADGES</p>
           </div>
         </div>
@@ -144,43 +163,31 @@
         <h2 class="section-title">My <span>story</span></h2>
         <span class="section-number">1</span>
       </div>
-      <div class="about-content">
-        <div class="about-text">
-          <div class="about-quote">
-            <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
-            <p>
-              Passionate developer with a strong focus on cybersecurity. I
-              combine technical skills with creative problem-solving to build
-              secure and automated systems that make a real impact.
-            </p>
-          </div>
-          <p>
-            I am currently pursuing my degree in Computer Science, specializing
-            in cybersecurity and web development. My journey in technology
-            started when I was 15, building simple websites and exploring how
-            they could be secured against common vulnerabilities.
-          </p>
-          <p>
-            Over the years, I've developed a deep understanding of both
-            front-end and back-end technologies, with a particular interest in
-            how they can be integrated with robust security practices.
-          </p>
-          <p>
-            When I'm not coding, you can find me participating in CTF
-            competitions, contributing to open-source projects, or exploring the
-            latest advancements in tech.
-          </p>
-        </div>
-        <div class="video-resume">
-          <div class="video-container">
-            <img
-              src="/api/placeholder/800/450"
-              alt="Video Placeholder"
-              class="video-placeholder"
-            />
-            <div class="play-button">
-              <i class="fa-solid fa-play play-icon"></i>
-            </div>
+      <div class="quote-container">
+        <div class="quote-marks">"</div>
+        <p class="quote-text">
+          ICT undergrad with a burning passion for Cybersecurity. I'm coding my
+          way to a DevOps career, where I can combine my technical skills to
+          build secure and automated systems.
+        </p>
+        <div class="quote-marks closing">"</div>
+      </div>
+    </section>
+
+    <!-- Video Resume Section -->
+    <section id="video-resume">
+      <div class="section-header">
+        <h2 class="section-title">Video <span>resume</span></h2>
+        <span class="section-number">2</span>
+      </div>
+      <div class="video-container">
+        <div class="video-placeholder">
+          <img
+            src="https://via.placeholder.com/800x450/1a1025/ffffff?text=COMING+SOON"
+            alt="Coming Soon"
+          />
+          <div class="play-button">
+            <i class="fa-solid fa-play"></i>
           </div>
         </div>
       </div>
@@ -190,79 +197,112 @@
     <section id="portfolio">
       <div class="section-header">
         <h2 class="section-title">Port<span>folio</span></h2>
-        <span class="section-number">2</span>
+        <span class="section-number">4</span>
       </div>
       <div class="portfolio-container">
+        <!-- Project 1 -->
         <div class="portfolio-item">
           <div class="portfolio-image">
-            <img src="/api/placeholder/600/400" alt="Project 1" />
+            <img
+              src="https://via.placeholder.com/600x400/2d8cf0/ffffff"
+              alt="GoBus Application"
+            />
           </div>
           <div class="portfolio-content">
-            <h3 class="portfolio-title">Bus Booking System</h3>
+            <h3 class="portfolio-title">GoBus Application</h3>
             <p class="portfolio-description">
-              A seamless journey starts here. Reserve your bus seat hassle-free
-              with this intuitive booking platform.
+              Your seamless journey starts here. Reserve your bus seat
+              hassle-free.
             </p>
-            <span class="portfolio-tag">React</span>
-            <span class="portfolio-tag">Node.js</span>
-            <span class="portfolio-tag">MongoDB</span>
-            <a href="#" class="portfolio-link"
-              >View Project <i class="fa-solid fa-arrow-right"></i
-            ></a>
+            <div class="portfolio-tags">
+              <span class="portfolio-tag">React</span>
+              <span class="portfolio-tag">NodeJS</span>
+              <span class="portfolio-tag">MongoDB</span>
+            </div>
+            <div class="view-project">
+              <a href="#" class="view-btn"
+                ><i class="fa-solid fa-magnifying-glass"></i
+              ></a>
+            </div>
           </div>
         </div>
+
+        <!-- Project 2 -->
         <div class="portfolio-item">
           <div class="portfolio-image">
-            <img src="/api/placeholder/600/400" alt="Project 2" />
+            <img
+              src="https://via.placeholder.com/600x400/ff6b6b/ffffff"
+              alt="UrbenEats UI Design"
+            />
           </div>
           <div class="portfolio-content">
-            <h3 class="portfolio-title">Food Delivery App</h3>
+            <h3 class="portfolio-title">UrbenEats UI Design</h3>
             <p class="portfolio-description">
-              Mobile app designed for a modern food delivery service with
-              real-time tracking and intuitive interface.
+              Delivery Right to Your Door Step
             </p>
-            <span class="portfolio-tag">React Native</span>
-            <span class="portfolio-tag">Firebase</span>
-            <span class="portfolio-tag">Google Maps API</span>
-            <a href="#" class="portfolio-link"
-              >View Project <i class="fa-solid fa-arrow-right"></i
-            ></a>
+            <div class="portfolio-tags">
+              <span class="portfolio-tag">UI/UX</span>
+              <span class="portfolio-tag">Figma</span>
+              <span class="portfolio-tag">Adobe XD</span>
+            </div>
+            <div class="view-project">
+              <a href="#" class="view-btn"
+                ><i class="fa-solid fa-magnifying-glass"></i
+              ></a>
+            </div>
           </div>
         </div>
+
+        <!-- Project 3 -->
         <div class="portfolio-item">
           <div class="portfolio-image">
-            <img src="/api/placeholder/600/400" alt="Project 3" />
+            <img
+              src="https://via.placeholder.com/600x400/feca57/333333"
+              alt="Attendance Marking System"
+            />
           </div>
           <div class="portfolio-content">
-            <h3 class="portfolio-title">Secure Payment Gateway</h3>
+            <h3 class="portfolio-title">Attendance Marking System</h3>
             <p class="portfolio-description">
-              A robust payment processing system with advanced security features
-              and fraud detection.
+              QR-based attendance marking system for educational institutions
             </p>
-            <span class="portfolio-tag">Django</span>
-            <span class="portfolio-tag">PostgreSQL</span>
-            <span class="portfolio-tag">Stripe API</span>
-            <a href="#" class="portfolio-link"
-              >View Project <i class="fa-solid fa-arrow-right"></i
-            ></a>
+            <div class="portfolio-tags">
+              <span class="portfolio-tag">React</span>
+              <span class="portfolio-tag">Firebase</span>
+              <span class="portfolio-tag">QR Code</span>
+            </div>
+            <div class="view-project">
+              <a href="#" class="view-btn"
+                ><i class="fa-solid fa-magnifying-glass"></i
+              ></a>
+            </div>
           </div>
         </div>
+
+        <!-- Project 4 -->
         <div class="portfolio-item">
           <div class="portfolio-image">
-            <img src="/api/placeholder/600/400" alt="Project 4" />
+            <img
+              src="https://via.placeholder.com/600x400/54a0ff/ffffff"
+              alt="Mobile Application"
+            />
           </div>
           <div class="portfolio-content">
-            <h3 class="portfolio-title">IoT Home Automation</h3>
+            <h3 class="portfolio-title">Mobile Application</h3>
             <p class="portfolio-description">
-              Smart home system allowing users to control and monitor home
-              devices securely from anywhere.
+              Cross-platform mobile application with modern UI and fingerprint
+              authentication
             </p>
-            <span class="portfolio-tag">Vue.js</span>
-            <span class="portfolio-tag">Python</span>
-            <span class="portfolio-tag">MQTT</span>
-            <a href="#" class="portfolio-link"
-              >View Project <i class="fa-solid fa-arrow-right"></i
-            ></a>
+            <div class="portfolio-tags">
+              <span class="portfolio-tag">Flutter</span>
+              <span class="portfolio-tag">Firebase</span>
+              <span class="portfolio-tag">Biometrics</span>
+            </div>
+            <div class="view-project">
+              <a href="#" class="view-btn"
+                ><i class="fa-solid fa-magnifying-glass"></i
+              ></a>
+            </div>
           </div>
         </div>
       </div>
@@ -271,174 +311,113 @@
     <!-- Skills Section -->
     <section id="skills">
       <div class="section-header">
-        <h2 class="section-title">My <span>skills</span></h2>
-        <span class="section-number">3</span>
+        <h2 class="section-title">Soft <span>skills</span></h2>
+        <span class="section-number">5</span>
       </div>
       <div class="skills-container">
-        <div class="skills-category">
-          <h3 class="category-title">Soft Skills</h3>
+        <div class="skills-group">
           <div class="skill-item">
             <div class="skill-header">
               <span class="skill-name">Communication</span>
-              <span class="skill-percentage">90%</span>
+              <span class="skill-value">ENGLISH</span>
             </div>
             <div class="skill-progress">
-              <div class="progress-bar" style="width: 90%"></div>
+              <div class="progress-bar" data-progress="90%"></div>
             </div>
           </div>
           <div class="skill-item">
             <div class="skill-header">
               <span class="skill-name">Critical Thinking</span>
-              <span class="skill-percentage">85%</span>
+              <span class="skill-value">90%</span>
             </div>
             <div class="skill-progress">
-              <div class="progress-bar" style="width: 85%"></div>
+              <div class="progress-bar" data-progress="90%"></div>
             </div>
           </div>
+        </div>
+        <div class="skills-group">
           <div class="skill-item">
             <div class="skill-header">
               <span class="skill-name">Team Work</span>
-              <span class="skill-percentage">95%</span>
+              <span class="skill-value">100%</span>
             </div>
             <div class="skill-progress">
-              <div class="progress-bar" style="width: 95%"></div>
+              <div class="progress-bar" data-progress="100%"></div>
             </div>
           </div>
           <div class="skill-item">
             <div class="skill-header">
               <span class="skill-name">Work Under Pressure</span>
-              <span class="skill-percentage">80%</span>
+              <span class="skill-value">90%</span>
             </div>
             <div class="skill-progress">
-              <div class="progress-bar" style="width: 80%"></div>
+              <div class="progress-bar" data-progress="90%"></div>
             </div>
           </div>
         </div>
-        <div class="skills-category">
-          <h3 class="category-title">Hard Skills</h3>
+      </div>
+
+      <div class="section-header" style="margin-top: 4rem">
+        <h2 class="section-title">Hard <span>Skills</span></h2>
+        <span class="section-number">6</span>
+      </div>
+      <div class="skills-container">
+        <div class="skills-group">
           <div class="skill-item">
             <div class="skill-header">
               <span class="skill-name">Full Stack</span>
-              <span class="skill-percentage">90%</span>
+              <span class="skill-value">90%</span>
             </div>
             <div class="skill-progress">
-              <div class="progress-bar" style="width: 90%"></div>
+              <div class="progress-bar" data-progress="90%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-header">
+              <span class="skill-name">SIEM</span>
+              <span class="skill-value">70%</span>
+            </div>
+            <div class="skill-progress">
+              <div class="progress-bar" data-progress="70%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-header">
+              <span class="skill-name">Networking</span>
+              <span class="skill-value">80%</span>
+            </div>
+            <div class="skill-progress">
+              <div class="progress-bar" data-progress="80%"></div>
+            </div>
+          </div>
+        </div>
+        <div class="skills-group">
+          <div class="skill-item">
+            <div class="skill-header">
+              <span class="skill-name">Cloud Computing</span>
+              <span class="skill-value">80%</span>
+            </div>
+            <div class="skill-progress">
+              <div class="progress-bar" data-progress="80%"></div>
             </div>
           </div>
           <div class="skill-item">
             <div class="skill-header">
               <span class="skill-name">DevOps</span>
-              <span class="skill-percentage">75%</span>
+              <span class="skill-value">80%</span>
             </div>
             <div class="skill-progress">
-              <div class="progress-bar" style="width: 75%"></div>
+              <div class="progress-bar" data-progress="80%"></div>
             </div>
           </div>
           <div class="skill-item">
             <div class="skill-header">
-              <span class="skill-name">Cloud Computing</span>
-              <span class="skill-percentage">80%</span>
+              <span class="skill-name">Scripting</span>
+              <span class="skill-value">70%</span>
             </div>
             <div class="skill-progress">
-              <div class="progress-bar" style="width: 80%"></div>
+              <div class="progress-bar" data-progress="70%"></div>
             </div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-header">
-              <span class="skill-name">Cybersecurity</span>
-              <span class="skill-percentage">85%</span>
-            </div>
-            <div class="skill-progress">
-              <div class="progress-bar" style="width: 85%"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Certificates Section -->
-    <section id="certificates">
-      <div class="section-header">
-        <h2 class="section-title">My <span>certificates</span></h2>
-        <span class="section-number">4</span>
-      </div>
-      <div class="certificates-container">
-        <div class="certificate-item">
-          <div class="certificate-image">
-            <img src="/api/placeholder/600/400" alt="Certificate 1" />
-            <div class="certificate-overlay">
-              <a href="#" class="view-certificate"
-                ><i class="fa-solid fa-eye"></i
-              ></a>
-            </div>
-          </div>
-          <div class="certificate-content">
-            <h3 class="certificate-title">AWS Certified Solutions Architect</h3>
-            <p class="certificate-issuer">Amazon Web Services</p>
-            <p class="certificate-date">August 2023</p>
-            <p class="certificate-description">
-              Validated expertise in designing distributed systems on AWS,
-              including deployment, management, and operations.
-            </p>
-          </div>
-        </div>
-        <div class="certificate-item">
-          <div class="certificate-image">
-            <img src="/api/placeholder/600/400" alt="Certificate 2" />
-            <div class="certificate-overlay">
-              <a href="#" class="view-certificate"
-                ><i class="fa-solid fa-eye"></i
-              ></a>
-            </div>
-          </div>
-          <div class="certificate-content">
-            <h3 class="certificate-title">Certified Ethical Hacker (CEH)</h3>
-            <p class="certificate-issuer">EC-Council</p>
-            <p class="certificate-date">May 2023</p>
-            <p class="certificate-description">
-              Comprehensive understanding of ethical hacking methodologies,
-              tools, and techniques for identifying vulnerabilities.
-            </p>
-          </div>
-        </div>
-        <div class="certificate-item">
-          <div class="certificate-image">
-            <img src="/api/placeholder/600/400" alt="Certificate 3" />
-            <div class="certificate-overlay">
-              <a href="#" class="view-certificate"
-                ><i class="fa-solid fa-eye"></i
-              ></a>
-            </div>
-          </div>
-          <div class="certificate-content">
-            <h3 class="certificate-title">Full Stack Web Development</h3>
-            <p class="certificate-issuer">Udemy</p>
-            <p class="certificate-date">January 2022</p>
-            <p class="certificate-description">
-              Comprehensive training in modern web development technologies
-              including React, Node.js, Express, and MongoDB.
-            </p>
-          </div>
-        </div>
-        <div class="certificate-item">
-          <div class="certificate-image">
-            <img src="/api/placeholder/600/400" alt="Certificate 4" />
-            <div class="certificate-overlay">
-              <a href="#" class="view-certificate"
-                ><i class="fa-solid fa-eye"></i
-              ></a>
-            </div>
-          </div>
-          <div class="certificate-content">
-            <h3 class="certificate-title">
-              Python for Data Science and Machine Learning
-            </h3>
-            <p class="certificate-issuer">Coursera</p>
-            <p class="certificate-date">November 2021</p>
-            <p class="certificate-description">
-              Comprehensive training in Python programming for data analysis,
-              visualization, and machine learning applications.
-            </p>
           </div>
         </div>
       </div>
@@ -447,58 +426,69 @@
     <!-- Journey Section -->
     <section id="journey">
       <div class="section-header">
-        <h2 class="section-title">My <span>journey</span></h2>
-        <span class="section-number">5</span>
+        <h2 class="section-title">My <span>Journey</span></h2>
+        <span class="section-number">7</span>
       </div>
+
       <div class="journey-container">
         <div class="journey-item">
           <div class="journey-marker"></div>
-          <h3 class="journey-title">Bachelor of Computer Science</h3>
-          <p class="journey-period">2021 - 2025</p>
+          <h3 class="journey-title">Bachelor of ICT</h3>
+          <p class="journey-period">USJP | 2021 - 2025</p>
           <p class="journey-description">
-            Currently pursuing my Bachelor's degree with a focus on
-            cybersecurity and web development. I've completed coursework in
-            algorithms, data structures, networking, and database management.
+            I am currently pursuing my Bachelor's degree in ICT at the
+            University of Sri Jayewardenepura, Sri Lanka. I have completed a
+            number of modules in the field of ICT, including programming, web
+            development, IOT, networking and database management. I specialize
+            in networking and have completed a number of projects in this field.
+            I am also a member of the ICT society of the university, where I
+            have participated in a number of events and workshops.
           </p>
-          <a href="#" class="journey-link"
-            >View Details <i class="fa-solid fa-arrow-right"></i
-          ></a>
         </div>
+
+        <div class="journey-item">
+          <div class="journey-marker"></div>
+          <h3 class="journey-title">GCE Advanced Level</h3>
+          <p class="journey-period">Technology Stream - 2020</p>
+          <p class="journey-description">
+            I did my A Levels in technology stream, where I studied ICT, SFT and
+            ET. scoring all A's and B's! My Z-score was an impressive 2.2025,
+            which allowed me to enter the University of Sri Jayewardenepura, Sri
+            Lanka.
+          </p>
+        </div>
+
         <div class="journey-item">
           <div class="journey-marker"></div>
           <h3 class="journey-title">CTF Player</h3>
-          <p class="journey-period">2022 - Present</p>
+          <p class="journey-period">jan 2022 - Present</p>
           <p class="journey-description">
-            Active participant in Capture The Flag competitions, specializing in
-            web exploitation, cryptography, and reverse engineering challenges.
+            I am a CTF player, specializing in solving challenges in Capture The
+            Flag competitions. I am a member of the University of Sri
+            Jayewardenepura CTF team, where I have participated in a number of
+            competitions.
           </p>
-          <a href="#" class="journey-link"
-            >View Details <i class="fa-solid fa-arrow-right"></i
-          ></a>
         </div>
+
         <div class="journey-item">
           <div class="journey-marker"></div>
           <h3 class="journey-title">Bug Hunter</h3>
-          <p class="journey-period">2020 - Present</p>
+          <p class="journey-period">jan 2020 - Present</p>
           <p class="journey-description">
-            Actively identify and report security vulnerabilities in web
-            applications through responsible disclosure programs.
+            I am a bug hunter, specializing in finding and reporting bugs in
+            websites and web applications.
           </p>
-          <a href="#" class="journey-link"
-            >View Details <i class="fa-solid fa-arrow-right"></i
-          ></a>
         </div>
+
         <div class="journey-item">
           <div class="journey-marker"></div>
-          <h3 class="journey-title">Freelance Developer</h3>
-          <p class="journey-period">2018 - Present</p>
+          <h3 class="journey-title">Freelancer</h3>
+          <p class="journey-period">jan 2018 - Present</p>
           <p class="journey-description">
-            Building custom web solutions for clients across various industries,
-            focusing on secure and scalable applications.
+            I am a freelancer, in Fullstack web development. I have completed a
+            number of projects for clients around the world. I have a passion
+            for creating beautiful and functional websites.
           </p>
-          <a href="#" class="journey-link"
-            >View Details <i class="fa-solid fa-arrow-right"></i
-          ></a>
         </div>
       </div>
     </section>
@@ -506,39 +496,55 @@
     <!-- Badges Section -->
     <section id="badges">
       <div class="section-header">
-        <h2 class="section-title">Profile <span>badges</span></h2>
-        <span class="section-number">6</span>
+        <h2 class="section-title">Profile <span>Badges</span></h2>
+        <span class="section-number">8</span>
       </div>
+
       <div class="badges-container">
         <div class="badge-item">
-          <h3 class="badge-platform">
-            <div class="badge-icon">
-              <i class="fa-solid fa-shield-halved"></i>
+          <h3 class="badge-title">Try Hack Me</h3>
+          <div class="badge-content">
+            <div class="badge-image">
+              <img
+                src="https://via.placeholder.com/300x80/1a1025/8A4FFF"
+                alt="Try Hack Me"
+              />
             </div>
-            TryHackMe
-          </h3>
-          <img src="/api/placeholder/300/80" alt="TryHackMe Badge" />
-          <div class="badge-stats">
-            <p class="badge-stat">IN THE TOP 5% OF USERS</p>
-            <p class="badge-stat">HACKER LEVEL</p>
-            <p class="badge-stat">COMPLETED 78 ROOMS</p>
-            <p class="badge-stat">ACHIEVED 15 BADGES</p>
+            <div class="badge-stats">
+              <p class="badge-stat">IN THE TOP 8% OF THM USERS</p>
+              <p class="badge-stat">HACKER LEVEL</p>
+              <p class="badge-stat">COMPLETED 67 ROOMS</p>
+              <p class="badge-stat">ACHIVED 13 BADGES</p>
+            </div>
+            <div class="badge-link-container">
+              <a href="#" class="badge-link"
+                >VIEW <i class="fa-solid fa-arrow-right"></i
+              ></a>
+            </div>
           </div>
-          <a href="#" class="badge-link">VIEW</a>
         </div>
+
         <div class="badge-item">
-          <h3 class="badge-platform">
-            <div class="badge-icon"><i class="fa-solid fa-cubes"></i></div>
-            HackTheBox
-          </h3>
-          <img src="/api/placeholder/300/80" alt="HackTheBox Badge" />
-          <div class="badge-stats">
-            <p class="badge-stat">RANK 850 IN THE WORLD</p>
-            <p class="badge-stat">PRO HACKER LEVEL</p>
-            <p class="badge-stat">COMPROMISED 25 MACHINES</p>
-            <p class="badge-stat">5.2% TOWARDS GURU</p>
+          <h3 class="badge-title">Hack The Box</h3>
+          <div class="badge-content">
+            <div class="badge-image">
+              <img
+                src="https://via.placeholder.com/300x80/1a1025/00FF00"
+                alt="Hack The Box"
+              />
+            </div>
+            <div class="badge-stats">
+              <p class="badge-stat">877TH RANK IN THE WORLD</p>
+              <p class="badge-stat">NOOB LEVEL</p>
+              <p class="badge-stat">0.2% OF HACK THE BOX PWNED</p>
+              <p class="badge-stat">4.4% TOWARDS SCRIPT KIDDIE</p>
+            </div>
+            <div class="badge-link-container">
+              <a href="#" class="badge-link"
+                >VIEW <i class="fa-solid fa-arrow-right"></i
+              ></a>
+            </div>
           </div>
-          <a href="#" class="badge-link">VIEW</a>
         </div>
       </div>
     </section>
@@ -547,30 +553,23 @@
     <section id="achievements">
       <div class="section-header">
         <h2 class="section-title">Achieve<span>ments</span></h2>
-        <span class="section-number">7</span>
+        <span class="section-number">9</span>
       </div>
-      <div class="achievements-slider">
-        <div class="slider-nav">
-          <div class="nav-button prev-button">
-            <i class="fa-solid fa-chevron-left"></i>
+
+      <div class="achievements-container">
+        <div class="achievement-item">
+          <div class="achievement-image">
+            <img
+              src="https://via.placeholder.com/800x400/333333/8A4FFF"
+              alt="Champions of Medusa 1.0"
+            />
           </div>
-          <div class="nav-button next-button">
-            <i class="fa-solid fa-chevron-right"></i>
-          </div>
-        </div>
-        <div class="achievement-slide">
-          <img
-            src="/api/placeholder/800/500"
-            alt="Achievement"
-            class="achievement-image"
-          />
           <div class="achievement-content">
-            <h3 class="achievement-title">Best Security Solution Award</h3>
-            <p class="achievement-subtitle">National Hackathon 2023</p>
+            <h3 class="achievement-title">Champions of Medusa 1.0</h3>
+            <p class="achievement-organization">University of Kelaniya</p>
             <p class="achievement-description">
-              Secured first place for developing an innovative security solution
-              that detects and prevents sophisticated phishing attacks using
-              machine learning algorithms.
+              Secured the 1<sup>st</sup> place in the Medusa 1.0 CTF competition
+              organized by the University of Kelaniya.
             </p>
           </div>
         </div>
@@ -581,81 +580,90 @@
     <section id="contact">
       <div class="section-header">
         <h2 class="section-title">Con<span>tact</span></h2>
-        <span class="section-number">8</span>
+        <span class="section-number">10</span>
       </div>
+
       <div class="contact-container">
         <div class="contact-info">
-          <h3 class="contact-title">Let's Talk</h3>
-          <div class="contact-detail">
-            <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
-            <div class="contact-text">
-              <h4>Call Me</h4>
-              <p>+1 (123) 456-7890</p>
+          <div class="contact-group">
+            <h3 class="contact-title">Call</h3>
+            <div class="contact-details">
+              <p class="contact-label">WORK:</p>
+              <p class="contact-value">+94 (070) 406 73 00</p>
+            </div>
+            <div class="contact-details">
+              <p class="contact-label">PERSONAL:</p>
+              <p class="contact-value">+94 (076) 103 34 90</p>
             </div>
           </div>
-          <div class="contact-detail">
-            <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
-            <div class="contact-text">
-              <h4>Email Me</h4>
-              <p>your.email@example.com</p>
+
+          <div class="contact-group">
+            <h3 class="contact-title">Wright</h3>
+            <div class="contact-details">
+              <p class="contact-label">EMAIL:</p>
+              <p class="contact-value">anupa4085@gmail.com</p>
             </div>
-          </div>
-          <div class="contact-detail">
-            <div class="contact-icon">
-              <i class="fa-brands fa-linkedin-in"></i>
-            </div>
-            <div class="contact-text">
-              <h4>LinkedIn</h4>
-              <p>linkedin.com/in/yourprofile</p>
+            <div class="contact-details">
+              <p class="contact-label">LINKEDIN:</p>
+              <p class="contact-value">@anupadinuranga</p>
             </div>
           </div>
         </div>
-        <div class="contact-form">
-          <h3 class="contact-title">Get in Touch</h3>
-          <form>
+
+        <div class="contact-form-container">
+          <h3 class="form-title">Get in touch</h3>
+          <form class="contact-form" id="contactForm">
             <div class="form-group">
-              <input type="text" class="form-control" placeholder="Name" />
+              <input
+                type="text"
+                placeholder="Name"
+                class="form-control"
+                id="name"
+                required
+              />
             </div>
             <div class="form-group">
-              <input type="email" class="form-control" placeholder="Email" />
+              <input
+                type="email"
+                placeholder="Email"
+                class="form-control"
+                id="email"
+                required
+              />
             </div>
             <div class="form-group">
-              <textarea class="form-control" placeholder="Message"></textarea>
+              <textarea
+                placeholder="Message"
+                class="form-control form-textarea"
+                id="message"
+                required
+              ></textarea>
             </div>
-            <div class="form-group">
+            <div class="form-footer">
               <button type="submit" class="form-submit">
-                SEND <i class="fa-solid fa-paper-plane"></i>
+                SEND <i class="fa-solid fa-arrow-right"></i>
               </button>
-              <span class="form-privacy"
-                >* I promise the confidentiality of your personal
-                information</span
-              >
+              <p class="form-privacy">
+                * I promise the confidentiality of your personal information
+              </p>
             </div>
           </form>
         </div>
       </div>
     </section>
 
+    <!-- Back to top button -->
+    <div class="back-to-top">
+      <i class="fa-solid fa-chevron-up"></i>
+    </div>
+
     <!-- Footer -->
     <footer>
       <div class="footer-content">
-        <p class="footer-text">© 2025 ALL RIGHTS RESERVED.</p>
-        <p class="footer-developer">DEVELOPED BY: <span>YOUR NAME</span></p>
+        <p class="footer-copyright">© 2025 ALL RIGHTS RESERVED.</p>
+        <p class="footer-credit">DEVELOPED BY: <span>CODERALLEN</span></p>
       </div>
     </footer>
-
-    <!-- Modal for certificate view -->
-    <div class="certificate-modal">
-      <div class="modal-content">
-        <span class="close-modal">&times;</span>
-        <img id="modal-image" src="" alt="Certificate" />
-        <div class="modal-details">
-          <h3 id="modal-title"></h3>
-          <p id="modal-issuer"></p>
-          <p id="modal-date"></p>
-        </div>
-      </div>
-    </div>
 
     <!-- JavaScript -->
     <script src="script.js"></script>
