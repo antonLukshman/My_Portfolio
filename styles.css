@@ -1857,3 +1857,29 @@ html[data-theme="light"] .footer-credit {
   box-shadow: 0 4px 16px #25d36655;
   color: #fff;
 }
+
+/* Add to styles.css */
+.journey-marker {
+  position: absolute;
+  top: 2rem;
+  right: 1rem;
+  width: 48px;
+  height: 48px;
+  background: none;
+  border-radius: 50%;
+  overflow: visible;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  z-index: 2;
+}
+
+.journey-logo {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border: 2px solid #eee;
+}
