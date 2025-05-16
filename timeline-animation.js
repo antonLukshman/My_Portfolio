@@ -113,10 +113,11 @@ function createTreeTimelineStructure(container) {
                 <img src="assets/logos/SMC.png" alt="Achievements icon" class="timeline-icon-img">
               </div>
               <div class="timeline-text">
-                <h3 class="timeline-title">Hackathon Success</h3>
-                <p class="timeline-description">As part of Team DevDynamos</p>
+                <h3 class="timeline-title">GCE Ordinary Levels</h3>
+                <li>St.Mary's College Chilaw</li>
+                <li>2014-2019</li>
                 <div class="timeline-details">
-                  <p>Achievements with Team DevDynamos:</p>
+                  <p>Achieved excellent grades in core subjects</p>
                 </div>
               </div>
             </div>
