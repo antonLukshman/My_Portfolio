@@ -1,0 +1,628 @@
+/* Modern Tree Timeline Animation Styles */
+
+/* Pulse animation for timeline icons */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+  }
+}
+
+.pulse-animation {
+  animation: pulse 2s infinite;
+}
+
+/* Timeline container */
+.timeline-wrapper {
+  position: relative;
+  margin: 40px 0;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.timeline-wrapper.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Tree timeline layout */
+.tree-timeline {
+  position: relative;
+  padding: 30px 0;
+}
+
+/* Timeline header with title and tabs */
+.timeline-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.timeline-title {
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+/* Timeline tabs as legend */
+.timeline-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.timeline-tab {
+  padding: 0.8rem 2.5rem !important; /* Increased horizontal padding */
+  background-color: var(--card-bg);
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 1.4rem !important; /* Larger font size */
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  min-width: 120px !important; /* Ensure minimum width */
+  text-align: center !important;
+}
+
+/* Color variations for tabs */
+.tab-blue {
+  color: #22b7cf;
+  background-color: rgba(34, 183, 207, 0.1);
+}
+
+.tab-orange {
+  color: #f9a40d;
+  background-color: rgba(249, 164, 13, 0.1);
+}
+
+.tab-pink {
+  color: #e58088;
+  background-color: rgba(229, 128, 136, 0.1);
+}
+
+/* Timeline tab interaction styles */
+.timeline-tab {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.timeline-tab::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  transition: width 0.3s ease;
+}
+
+.timeline-tab:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.timeline-tab:hover::before {
+  width: 100%;
+}
+
+.timeline-tab.active {
+  transform: translateY(-8px) !important;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.tab-blue::before {
+  background-color: #22b7cf;
+}
+
+.tab-orange::before {
+  background-color: #f9a40d;
+}
+
+.tab-pink::before {
+  background-color: #e58088;
+}
+
+/* Tree container */
+.timeline-tree-container {
+  position: relative;
+  min-height: 600px;
+  margin: 20px 0;
+}
+
+/* Timeline central stem */
+.timeline-stem {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 4px;
+  background-image: linear-gradient(
+    to bottom,
+    transparent,
+    var(--text-color) 10%,
+    var(--text-color) 90%,
+    transparent
+  );
+  transform: translateX(-50%);
+  height: 0%;
+  transition: height 1.5s ease;
+}
+
+.timeline-stem.animate-stem {
+  height: 100%;
+}
+
+/* Timeline entries container */
+.timeline-entries {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+  padding: 40px 0;
+}
+
+/* Individual timeline entry */
+.timeline-entry {
+  position: relative;
+  width: 45%;
+  opacity: 0;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.timeline-entry.animate-entry {
+  opacity: 1;
+}
+
+/* Left and right positioning */
+.entry-left {
+  align-self: flex-start;
+  transform: translateX(-50px);
+}
+
+.entry-right {
+  align-self: flex-end;
+  transform: translateX(50px);
+}
+
+.entry-left.animate-entry {
+  transform: translateX(0);
+}
+
+.entry-right.animate-entry {
+  transform: translateX(0);
+}
+
+/* Connector between stem and content */
+.entry-connector {
+  position: absolute;
+  top: 40px;
+  display: flex;
+  align-items: center;
+}
+
+.entry-left .entry-connector {
+  right: -40px;
+  width: 40px;
+  justify-content: flex-end;
+}
+
+.entry-right .entry-connector {
+  left: -40px;
+  width: 40px;
+  justify-content: flex-start;
+}
+
+.connector-line {
+  height: 3px;
+  width: 0%;
+  transition: width 0.8s ease;
+}
+
+.connector-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.entry-left .connector-dot {
+  right: 0;
+}
+
+.entry-right .connector-dot {
+  left: 0;
+}
+
+.animate-connector .connector-line {
+  width: 100%;
+}
+
+.animate-connector .connector-dot {
+  opacity: 1;
+}
+
+/* Color variations for connectors */
+.entry-blue .connector-line {
+  background-color: #22b7cf;
+}
+
+.entry-blue .connector-dot {
+  background-color: #22b7cf;
+}
+
+.entry-orange .connector-line {
+  background-color: #f9a40d;
+}
+
+.entry-orange .connector-dot {
+  background-color: #f9a40d;
+}
+
+.entry-pink .connector-line {
+  background-color: #e58088;
+}
+
+.entry-pink .connector-dot {
+  background-color: #e58088;
+}
+
+/* Entry content */
+.entry-content {
+  background-color: var(--card-bg);
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  opacity: 0;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.animate-content {
+  opacity: 1;
+}
+
+.entry-left .entry-content {
+  transform: translateX(-20px);
+  border-right: 3px solid transparent;
+}
+
+.entry-right .entry-content {
+  transform: translateX(20px);
+  border-left: 3px solid transparent;
+}
+
+.animate-content.entry-left .entry-content {
+  transform: translateX(0);
+}
+
+.animate-content.entry-right .entry-content {
+  transform: translateX(0);
+}
+
+/* Year display */
+.entry-year {
+  position: absolute;
+  top: -15px;
+  font-size: 3rem !important;
+  font-weight: 700 !important;
+  opacity: 0.9 !important;
+  transform: translateY(10px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.entry-left .entry-year {
+  left: 20px;
+}
+
+.entry-right .entry-year {
+  right: 20px;
+}
+
+/* Color variations for content border */
+.content-blue {
+  border-color: #22b7cf !important;
+}
+
+.content-blue .entry-year {
+  color: #22b7cf;
+}
+
+.content-orange {
+  border-color: #f9a40d !important;
+}
+
+.content-orange .entry-year {
+  color: #f9a40d;
+}
+
+.content-pink {
+  border-color: #e58088 !important;
+}
+
+.content-pink .entry-year {
+  color: #e58088;
+}
+
+/* Timeline content layout */
+.timeline-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 5px auto 15px;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.timeline-icon-img {
+  width: 60%;
+  height: 60%;
+  object-fit: contain;
+}
+
+/* Color variations for content */
+.content-blue .timeline-icon {
+  background-color: rgba(34, 183, 207, 0.2);
+}
+
+.content-orange .timeline-icon {
+  background-color: rgba(249, 164, 13, 0.2);
+}
+
+.content-pink .timeline-icon {
+  background-color: rgba(229, 128, 136, 0.2);
+}
+
+/* Timeline text content */
+.timeline-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.timeline-title {
+  font-size: 1.6rem !important;
+  font-weight: bold;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.timeline-description {
+  font-size: 1rem;
+  color: var(--text-color);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  text-align: center;
+}
+
+.timeline-details {
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px dashed rgba(255, 255, 255, 0.2);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+html[data-theme="light"] .timeline-details {
+  border-top: 1px dashed rgba(0, 0, 0, 0.2);
+}
+
+.timeline-details p {
+  margin-bottom: 8px;
+}
+
+.timeline-details ul {
+  padding-left: 20px;
+  margin: 8px 0;
+}
+
+.timeline-details li {
+  margin-bottom: 5px;
+  font-size: 0.9rem;
+}
+
+/* Responsive styles */
+@media (max-width: 992px) {
+  .timeline-entry {
+    width: 80%;
+  }
+}
+
+@media (max-width: 768px) {
+  .timeline-stem {
+    left: 30px;
+  }
+
+  .timeline-entry {
+    width: calc(100% - 60px);
+    align-self: flex-end !important;
+    margin-left: 60px;
+  }
+
+  .entry-left .entry-connector,
+  .entry-right .entry-connector {
+    left: -30px;
+    right: auto;
+    width: 30px;
+    justify-content: flex-start;
+  }
+
+  .entry-left .connector-dot,
+  .entry-right .connector-dot {
+    left: 0;
+    right: auto;
+  }
+
+  .entry-left .entry-content,
+  .entry-right .entry-content {
+    border-left: 3px solid transparent;
+    border-right: none;
+  }
+
+  .entry-left .entry-year,
+  .entry-right .entry-year {
+    left: 20px;
+    right: auto;
+  }
+}
+
+/* Add these styles at the end of your file */
+
+/* Timeline entry highlighting styles */
+.timeline-entry-dim {
+  opacity: 0.4 !important;
+  transition: opacity 0.5s ease;
+}
+
+.timeline-entry-highlight {
+  animation: highlight-pulse 1s ease-in-out;
+  transform: scale(1.05) !important;
+  z-index: 10;
+}
+
+@keyframes highlight-pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.1);
+  }
+
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px 10px rgba(255, 255, 255, 0.2);
+  }
+
+  100% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.1);
+  }
+}
+
+/* Ensure that only active entries are fully visible when filtering */
+.timeline-entry.animate-entry {
+  opacity: 1;
+  transition: opacity 0.8s ease, transform 0.8s ease, filter 0.5s ease;
+}
+
+/* Desktop view adjustments for centered timeline */
+@media (min-width: 992px) {
+  /* Center the timeline stem */
+  .timeline-stem {
+    left: 50% !important;
+    width: 6px !important; /* Slightly wider stem for better visibility */
+  }
+
+  /* Adjust entry widths */
+  .timeline-entry {
+    width: 42% !important; /* Slightly narrower to avoid overlap */
+  }
+
+  /* Adjust connector positions */
+  .entry-left .entry-connector {
+    right: -50px !important; /* Longer connector */
+    width: 50px !important;
+  }
+
+  .entry-right .entry-connector {
+    left: -50px !important; /* Longer connector */
+    width: 50px !important;
+  }
+
+  /* Add space between entries */
+  .timeline-entries {
+    gap: 120px !important; /* More vertical space between entries */
+  }
+
+  /* Entry content improvements */
+  .entry-content {
+    padding: 30px !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15) !important;
+  }
+
+  /* Highlight effects */
+  .timeline-entry-highlight .entry-content {
+    transform: scale(1.05) !important;
+    box-shadow: 0 15px 40px rgba(255, 255, 255, 0.2) !important;
+  }
+
+  /* Timeline tab styling enhancements */
+  .timeline-tabs {
+    margin-bottom: 40px !important;
+  }
+
+  .timeline-tab.active {
+    transform: translateY(-8px) !important;
+  }
+
+  /* Better connector animations */
+  .animate-connector .connector-line {
+    transition: width 1s ease !important;
+  }
+
+  .connector-dot {
+    width: 18px !important;
+    height: 18px !important;
+  }
+}
+
+/* Enhanced content styling */
+.timeline-title {
+  margin-bottom: 15px !important;
+  font-size: 1.6rem !important;
+}
+
+/* Year display */
+.entry-year {
+  font-size: 3rem !important;
+  font-weight: 700 !important;
+  opacity: 0.9 !important;
+}
+
+/* Timeline navigation */
+.timeline-tab {
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+}
+
+.timeline-tab:hover {
+  transform: translateY(-5px) scale(1.05) !important;
+}
+
+.timeline-tab.active {
+  transform: translateY(-8px) !important;
+}
+
+/* Only apply alternating layout on desktop */
+@media (min-width: 992px) {
+  .timeline-entries {
+    align-items: center !important;
+  }
+
+  .entry-left {
+    align-self: flex-start !important;
+  }
+
+  .entry-right {
+    align-self: flex-end !important;
+  }
+}
