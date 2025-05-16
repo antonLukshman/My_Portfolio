@@ -18,8 +18,8 @@
         <nav>
           <a href="#hero" class="nav-item">HOME</a>
           <a href="#about" class="nav-item">ABOUT</a>
+          <a href="#video-resume" class="nav-item">RESUME</a>
           <a href="#portfolio" class="nav-item">PORTFOLIO</a>
-          <a href="#resume" class="nav-item">RESUME</a>
           <a href="#contact" class="nav-item">CONTACT</a>
         </nav>
         <div class="right-actions">
@@ -43,8 +43,8 @@
         <span class="close-mobile-menu"><i class="fa-solid fa-xmark"></i></span>
         <a href="#hero" class="popup-item">HOME</a>
         <a href="#about" class="popup-item">ABOUT</a>
+        <a href="#video-resume" class="popup-item">RESUME</a>
         <a href="#portfolio" class="popup-item">PORTFOLIO</a>
-        <a href="#resume" class="popup-item">RESUME</a>
         <a href="#contact" class="popup-item">CONTACT</a>
         <div class="popup-theme-toggle">
           <div class="theme-toggle">
@@ -62,6 +62,15 @@
     <section id="hero" class="hero-mobile">
       <div class="video-background">
         <video autoplay muted loop id="hero-video">
+          <source
+            src="robo.mp4"
+            type
+            <video
+            autoplay
+            muted
+            loop
+            id="hero-video"
+          />
           <source src="robo.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
@@ -192,117 +201,85 @@
       </div>
     </section>
 
-    <!-- Portfolio Section -->
-    <section id="portfolio">
+    <!-- Journey Section -->
+    <section id="journey">
       <div class="section-header">
-        <h2 class="section-title">Port<span>folio</span></h2>
-        <span class="section-number">4</span>
+        <h2 class="section-title">My <span>Journey</span></h2>
+        <span class="section-number">7</span>
       </div>
-      <div class="portfolio-container">
-        <!-- Project 1 -->
-        <div class="portfolio-item">
-          <div class="portfolio-image">
-            <img
-              src="https://via.placeholder.com/600x400/2d8cf0/ffffff"
-              alt="GoBus Application"
-            />
+
+      <div class="journey-container">
+        <div class="journey-item">
+          <div class="journey-marker">
+            <a
+              href="https://www.westminster.ac.uk/"
+              target="_blank"
+              rel="noopener"
+            >
+              <img
+                src="assets/logos/uow.png"
+                alt="UOW Logo"
+                class="journey-logo"
+                style="cursor: pointer"
+              />
+            </a>
           </div>
-          <div class="portfolio-content">
-            <h3 class="portfolio-title">GoBus Application</h3>
-            <p class="portfolio-description">
-              Your seamless journey starts here. Reserve your bus seat
-              hassle-free.
-            </p>
-            <div class="portfolio-tags">
-              <span class="portfolio-tag">React</span>
-              <span class="portfolio-tag">NodeJS</span>
-              <span class="portfolio-tag">MongoDB</span>
-            </div>
-            <div class="view-project">
-              <a href="#" class="view-btn"
-                ><i class="fa-solid fa-magnifying-glass"></i
-              ></a>
-            </div>
-          </div>
+          <h3 class="journey-title">Bachelor of Computer Science</h3>
+          <p class="journey-period">UOW | 2024 - Present</p>
+          <p class="journey-description">
+            I’m a Computer Science undergraduate at the University of
+            Westminster (IIT, Sri Lanka), with a focus on full-stack development
+            and DevOps. I have hands-on experience in web development, cloud
+            technologies, and database management. Actively involved in tech
+            communities like IEEE, I consistently engage in projects,
+            hackathons, and workshops to grow both technically and
+            professionally.
+          </p>
         </div>
 
-        <!-- Project 2 -->
-        <div class="portfolio-item">
-          <div class="portfolio-image">
-            <img
-              src="https://via.placeholder.com/600x400/ff6b6b/ffffff"
-              alt="UrbenEats UI Design"
-            />
+        <div class="journey-item">
+          <div class="journey-marker">
+            <a
+              href="https://web.facebook.com/pscp.lk/?_rdc=1&_rdr#"
+              target="_blank"
+              rel="noopener"
+            >
+              <img
+                src="assets/logos/PSC.jpg"
+                alt="A/L School Logo"
+                class="journey-logo"
+                style="cursor: pointer"
+              />
+            </a>
           </div>
-          <div class="portfolio-content">
-            <h3 class="portfolio-title">UrbenEats UI Design</h3>
-            <p class="portfolio-description">
-              Delivery Right to Your Door Step
-            </p>
-            <div class="portfolio-tags">
-              <span class="portfolio-tag">UI/UX</span>
-              <span class="portfolio-tag">Figma</span>
-              <span class="portfolio-tag">Adobe XD</span>
-            </div>
-            <div class="view-project">
-              <a href="#" class="view-btn"
-                ><i class="fa-solid fa-magnifying-glass"></i
-              ></a>
-            </div>
-          </div>
+          <h3 class="journey-title">GCE Advanced Level</h3>
+          <p class="journey-period">Physical Science Stream - 2020-2022</p>
+          <p class="journey-description">
+            I completed my A/Ls in the Physical Science stream at Presidents
+            Science College, Puttalam, with subjects including Chemistry,
+            Combined Mathematics, and Physics, achieving strong results. My
+            performance enabled me to pursue higher education in Computer
+            Science at the University of Westminster through IIT, Sri Lanka.
+          </p>
         </div>
 
-        <!-- Project 3 -->
-        <div class="portfolio-item">
-          <div class="portfolio-image">
-            <img
-              src="https://via.placeholder.com/600x400/feca57/333333"
-              alt="Attendance Marking System"
-            />
+        <div class="journey-item">
+          <div class="journey-marker">
+            <a href="https://chilawsmc.com/" target="_blank" rel="noopener">
+              <img
+                src="assets/logos/SMC.png"
+                alt="O/L School Logo"
+                class="journey-logo"
+                style="cursor: pointer"
+              />
+            </a>
           </div>
-          <div class="portfolio-content">
-            <h3 class="portfolio-title">Attendance Marking System</h3>
-            <p class="portfolio-description">
-              QR-based attendance marking system for educational institutions
-            </p>
-            <div class="portfolio-tags">
-              <span class="portfolio-tag">React</span>
-              <span class="portfolio-tag">Firebase</span>
-              <span class="portfolio-tag">QR Code</span>
-            </div>
-            <div class="view-project">
-              <a href="#" class="view-btn"
-                ><i class="fa-solid fa-magnifying-glass"></i
-              ></a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Project 4 -->
-        <div class="portfolio-item">
-          <div class="portfolio-image">
-            <img
-              src="https://via.placeholder.com/600x400/54a0ff/ffffff"
-              alt="Mobile Application"
-            />
-          </div>
-          <div class="portfolio-content">
-            <h3 class="portfolio-title">Mobile Application</h3>
-            <p class="portfolio-description">
-              Cross-platform mobile application with modern UI and fingerprint
-              authentication
-            </p>
-            <div class="portfolio-tags">
-              <span class="portfolio-tag">Flutter</span>
-              <span class="portfolio-tag">Firebase</span>
-              <span class="portfolio-tag">Biometrics</span>
-            </div>
-            <div class="view-project">
-              <a href="#" class="view-btn"
-                ><i class="fa-solid fa-magnifying-glass"></i
-              ></a>
-            </div>
-          </div>
+          <h3 class="journey-title">GCE Ordinary Level</h3>
+          <p class="journey-period">2014 - 2019</p>
+          <p class="journey-description">
+            I completed my G.C.E. O/L at St. Mary’s College, Chilaw, with
+            excellent results in Mathematics, Science, and ICT.
+          </p>
         </div>
       </div>
     </section>
@@ -422,89 +399,6 @@
       </div>
     </section>
 
-    <!-- Journey Section -->
-    <section id="journey">
-      <div class="section-header">
-        <h2 class="section-title">My <span>Journey</span></h2>
-        <span class="section-number">7</span>
-      </div>
-
-      <div class="journey-container">
-        <div class="journey-item">
-          <div class="journey-marker">
-            <a
-              href="https://www.westminster.ac.uk/"
-              target="_blank"
-              rel="noopener"
-            >
-              <img
-                src="assets/logos/uow.png"
-                alt="UOW Logo"
-                class="journey-logo"
-                style="cursor: pointer"
-              />
-            </a>
-          </div>
-          <h3 class="journey-title">Bachelor of Computer Science</h3>
-          <p class="journey-period">UOW | 2024 - Present</p>
-          <p class="journey-description">
-            I’m a Computer Science undergraduate at the University of
-            Westminster (IIT, Sri Lanka), with a focus on full-stack development
-            and DevOps. I have hands-on experience in web development, cloud
-            technologies, and database management. Actively involved in tech
-            communities like IEEE, I consistently engage in projects,
-            hackathons, and workshops to grow both technically and
-            professionally.
-          </p>
-        </div>
-
-        <div class="journey-item">
-          <div class="journey-marker">
-            <a
-              href="https://web.facebook.com/pscp.lk/?_rdc=1&_rdr#"
-              target="_blank"
-              rel="noopener"
-            >
-              <img
-                src="assets/logos/PSC.jpg"
-                alt="A/L School Logo"
-                class="journey-logo"
-                style="cursor: pointer"
-              />
-            </a>
-          </div>
-          <h3 class="journey-title">GCE Advanced Level</h3>
-          <p class="journey-period">Physical Science Stream - 2020-2022</p>
-          <p class="journey-description">
-            I completed my A/Ls in the Physical Science stream at Presidents
-            Science College, Puttalam, with subjects including Chemistry,
-            Combined Mathematics, and Physics, achieving strong results. My
-            performance enabled me to pursue higher education in Computer
-            Science at the University of Westminster through IIT, Sri Lanka.
-          </p>
-        </div>
-
-        <div class="journey-item">
-          <div class="journey-marker">
-            <a href="https://chilawsmc.com/" target="_blank" rel="noopener">
-              <img
-                src="assets/logos/SMC.png"
-                alt="O/L School Logo"
-                class="journey-logo"
-                style="cursor: pointer"
-              />
-            </a>
-          </div>
-          <h3 class="journey-title">GCE Ordinary Level</h3>
-          <p class="journey-period">2014 - 2019</p>
-          <p class="journey-description">
-            I completed my G.C.E. O/L at St. Mary’s College, Chilaw, with
-            excellent results in Mathematics, Science, and ICT.
-          </p>
-        </div>
-      </div>
-    </section>
-
     <!-- Badges Section -->
     <section id="badges">
       <div class="section-header">
@@ -554,6 +448,121 @@
             <div class="badge-link-container">
               <a href="#" class="badge-link"
                 >VIEW <i class="fa-solid fa-arrow-right"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio">
+      <div class="section-header">
+        <h2 class="section-title">Port<span>folio</span></h2>
+        <span class="section-number">4</span>
+      </div>
+      <div class="portfolio-container">
+        <!-- Project 1 -->
+        <div class="portfolio-item">
+          <div class="portfolio-image">
+            <img
+              src="https://via.placeholder.com/600x400/2d8cf0/ffffff"
+              alt="GoBus Application"
+            />
+          </div>
+          <div class="portfolio-content">
+            <h3 class="portfolio-title">GoBus Application</h3>
+            <p class="portfolio-description">
+              Your seamless journey starts here. Reserve your bus seat
+              hassle-free.
+            </p>
+            <div class="portfolio-tags">
+              <span class="portfolio-tag">React</span>
+              <span class="portfolio-tag">NodeJS</span>
+              <span class="portfolio-tag">MongoDB</span>
+            </div>
+            <div class="view-project">
+              <a href="#" class="view-btn"
+                ><i class="fa-solid fa-magnifying-glass"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="portfolio-item">
+          <div class="portfolio-image">
+            <img
+              src="https://via.placeholder.com/600x400/ff6b6b/ffffff"
+              alt="UrbenEats UI Design"
+            />
+          </div>
+          <div class="portfolio-content">
+            <h3 class="portfolio-title">UrbenEats UI Design</h3>
+            <p class="portfolio-description">
+              Delivery Right to Your Door Step
+            </p>
+            <div class="portfolio-tags">
+              <span class="portfolio-tag">UI/UX</span>
+              <span class="portfolio-tag">Figma</span>
+              <span class="portfolio-tag">Adobe XD</span>
+            </div>
+            <div class="view-project">
+              <a href="#" class="view-btn"
+                ><i class="fa-solid fa-magnifying-glass"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="portfolio-item">
+          <div class="portfolio-image">
+            <img
+              src="https://via.placeholder.com/600x400/feca57/333333"
+              alt="Attendance Marking System"
+            />
+          </div>
+          <div class="portfolio-content">
+            <h3 class="portfolio-title">Attendance Marking System</h3>
+            <p class="portfolio-description">
+              QR-based attendance marking system for educational institutions
+            </p>
+            <div class="portfolio-tags">
+              <span class="portfolio-tag">React</span>
+              <span class="portfolio-tag">Firebase</span>
+              <span class="portfolio-tag">QR Code</span>
+            </div>
+            <div class="view-project">
+              <a href="#" class="view-btn"
+                ><i class="fa-solid fa-magnifying-glass"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="portfolio-item">
+          <div class="portfolio-image">
+            <img
+              src="https://via.placeholder.com/600x400/54a0ff/ffffff"
+              alt="Mobile Application"
+            />
+          </div>
+          <div class="portfolio-content">
+            <h3 class="portfolio-title">Mobile Application</h3>
+            <p class="portfolio-description">
+              Cross-platform mobile application with modern UI and fingerprint
+              authentication
+            </p>
+            <div class="portfolio-tags">
+              <span class="portfolio-tag">Flutter</span>
+              <span class="portfolio-tag">Firebase</span>
+              <span class="portfolio-tag">Biometrics</span>
+            </div>
+            <div class="view-project">
+              <a href="#" class="view-btn"
+                ><i class="fa-solid fa-magnifying-glass"></i
               ></a>
             </div>
           </div>
