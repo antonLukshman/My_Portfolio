@@ -805,6 +805,7 @@ html[data-theme="light"] .portfolio-description {
   transition: background-color 0.3s ease;
 }
 
+/* Remove the existing view-project button */
 .view-project {
   position: absolute;
   right: 1.5rem;
@@ -825,6 +826,47 @@ html[data-theme="light"] .portfolio-description {
 
 .view-btn:hover {
   transform: scale(1.1);
+}
+
+/* Add new project action buttons */
+.portfolio-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.project-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.7rem 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.visit-btn {
+  background-color: var(--accent-color);
+  color: var(--primary-color-dark);
+}
+
+.github-btn {
+  background-color: var(--card-bg);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-color);
+}
+
+html[data-theme="light"] .github-btn {
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 /* Skills Section */
