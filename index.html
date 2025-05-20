@@ -553,51 +553,86 @@
         <span class="section-number">8</span>
       </div>
 
-      <div class="badges-container">
-        <div class="badge-item">
-          <h3 class="badge-title">Try Hack Me</h3>
-          <div class="badge-content">
-            <div class="badge-image">
-              <img
-                src="https://via.placeholder.com/300x80/1a1025/8A4FFF"
-                alt="Try Hack Me"
-              />
-            </div>
-            <div class="badge-stats">
-              <p class="badge-stat">IN THE TOP 8% OF THM USERS</p>
-              <p class="badge-stat">HACKER LEVEL</p>
-              <p class="badge-stat">COMPLETED 67 ROOMS</p>
-              <p class="badge-stat">ACHIVED 13 BADGES</p>
-            </div>
-            <div class="badge-link-container">
-              <a href="#" class="badge-link"
-                >VIEW <i class="fa-solid fa-arrow-right"></i
-              ></a>
-            </div>
-          </div>
+      <div
+        class="badges-carousel"
+        aria-roledescription="carousel"
+        aria-label="Badges carousel"
+      >
+        <div class="badges-track">
+          <!-- Badge 1 -->
+          <img
+            src="assets/Badges/Postman_student_expert.png"
+            alt="Postman API Student Expert"
+            class="badge-logo"
+            data-index="0"
+          />
+
+          <!-- Badge 2 -->
+          <img
+            src="assets/Badges/AWS Educate Introduction to Cloud 101.png"
+            alt="AWS Educate Cloud Computing 101"
+            class="badge-logo"
+            data-index="1"
+          />
+
+          <!-- Badge 3 -->
+          <img
+            src="assets/Badges/Postman_student_expert.png"
+            alt="Microsoft AI Skills Challenge"
+            class="badge-logo"
+            data-index="2"
+          />
+
+          <!-- Badge 4 -->
+          <img
+            src="assets/Badges/AWS Educate Introduction to Cloud 101.png"
+            alt="AWS Fundamentals"
+            class="badge-logo"
+            data-index="3"
+          />
+
+          <!-- Badge 5 -->
+          <img
+            src="assets/badges/github-fundamentals.png"
+            alt="GitHub Fundamentals"
+            class="badge-logo"
+            data-index="4"
+          />
+
+          <!-- Badge 6 -->
+          <img
+            src="assets/badges/python-certificate.png"
+            alt="Python Certificate"
+            class="badge-logo"
+            data-index="5"
+          />
+
+          <!-- Badge 7 -->
+          <img
+            src="assets/badges/linux-certificate.png"
+            alt="Linux Certificate"
+            class="badge-logo"
+            data-index="6"
+          />
         </div>
 
-        <div class="badge-item">
-          <h3 class="badge-title">Hack The Box</h3>
-          <div class="badge-content">
-            <div class="badge-image">
-              <img
-                src="https://via.placeholder.com/300x80/1a1025/00FF00"
-                alt="Hack The Box"
-              />
-            </div>
-            <div class="badge-stats">
-              <p class="badge-stat">877TH RANK IN THE WORLD</p>
-              <p class="badge-stat">NOOB LEVEL</p>
-              <p class="badge-stat">0.2% OF HACK THE BOX PWNED</p>
-              <p class="badge-stat">4.4% TOWARDS SCRIPT KIDDIE</p>
-            </div>
-            <div class="badge-link-container">
-              <a href="#" class="badge-link"
-                >VIEW <i class="fa-solid fa-arrow-right"></i
-              ></a>
-            </div>
-          </div>
+        <!-- Navigation Arrows -->
+        <div
+          class="carousel-nav badge-nav prev-badge"
+          aria-label="Previous badge"
+        >
+          <i class="fa-solid fa-chevron-left"></i>
+        </div>
+        <div class="carousel-nav badge-nav next-badge" aria-label="Next badge">
+          <i class="fa-solid fa-chevron-right"></i>
+        </div>
+
+        <!-- Dot Navigation -->
+        <div class="carousel-dots badge-dots">
+          <div class="carousel-dot active" data-index="0"></div>
+          <div class="carousel-dot" data-index="1"></div>
+          <div class="carousel-dot" data-index="2"></div>
+          <div class="carousel-dot" data-index="3"></div>
         </div>
       </div>
     </section>

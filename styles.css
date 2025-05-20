@@ -2006,8 +2006,112 @@ html[data-theme="light"] .certification-item {
   transform: translateY(-2px);
 }
 
+/* Responsive adjustments */
 @media (min-width: 768px) {
   .certifications-container {
     max-height: 400px; /* Taller on larger screens */
+  }
+}
+
+/* Badge Carousel Styling - Updated */
+.badges-carousel {
+  position: relative;
+  width: 100%;
+  min-height: 250px;
+  overflow: hidden;
+  border-radius: 15px;
+  background-color: var(--primary-color-dark);
+  padding: 2rem 3rem;
+  margin-bottom: 2rem;
+}
+
+.badges-track {
+  display: flex;
+  flex-wrap: nowrap;
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+  min-height: 180px;
+  align-items: center;
+}
+
+.badge-logo {
+  flex: 0 0 25%; /* Show 4 badges at once in desktop view */
+  max-width: 25%;
+  padding: 0.5rem;
+  height: auto;
+  max-height: 180px;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.2));
+  transition: transform 0.3s ease;
+}
+
+.badge-logo:hover {
+  transform: scale(1.05);
+}
+
+.badge-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: var(--text-color);
+  border: none;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  opacity: 0.7;
+}
+
+.badge-nav:hover {
+  transform: translateY(-50%) scale(1.1);
+  opacity: 1;
+  background-color: var(--accent-color);
+  color: var(--primary-color-dark);
+}
+
+.prev-badge {
+  left: 10px;
+}
+
+.next-badge {
+  right: 10px;
+}
+
+/* Responsive styles */
+@media (max-width: 991px) {
+  .badge-logo {
+    flex: 0 0 33.333%;
+    max-width: 33.333%;
+  }
+}
+
+@media (max-width: 767px) {
+  .badge-logo {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+
+  .badges-carousel {
+    padding: 2rem;
+    min-height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .badge-logo {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .badges-carousel {
+    padding: 1.5rem;
+    min-height: 200px;
   }
 }

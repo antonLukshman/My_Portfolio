@@ -515,3 +515,135 @@ function initAchievementsCarousel() {
     });
   }
 }
+
+/**
+ * Initialize the badges carousel with horizontal scrolling
+ */
+function initBadgesCarousel() {
+  const carousel = document.querySelector(".badges-carousel");
+  if (!carousel) return;
+
+  const track = carousel.querySelector(".badges-track");
+  const badges = carousel.querySelectorAll(".badge-logo");
+  const prevBtn = carousel.querySelector(".prev-badge");
+  const nextBtn = carousel.querySelector(".next-badge");
+  const dots = carousel.querySelectorAll(".carousel-dot");
+
+  const totalBadges = badges.length;
+  let currentPosition = 0;
+  let badgesPerView = 4; // Default for desktop
+
+  // Update badges per view based on screen size
+  function updateBadgesPerView() {
+    if (window.innerWidth <= 480) {
+      badgesPerView = 1;
+    } else if (window.innerWidth <= 767) {
+      badgesPerView = 2;
+    } else if (window.innerWidth <= 991) {
+      badgesPerView = 3;
+    } else {
+      badgesPerView = 4;
+    }
+
+    // Update position and track after resize
+    updateTrackPosition();
+  }
+
+  function updateTrackPosition() {
+    // Calculate how many "pages" of badges we have
+    const totalPages = Math.ceil((totalBadges - badgesPerView + 1) / 1);
+
+    // Make sure current position is valid after resize
+    currentPosition = Math.min(currentPosition, totalBadges - badgesPerView);
+    currentPosition = Math.max(0, currentPosition);
+
+    // Update transform
+    track.style.transform = `translateX(-${
+      (currentPosition * 100) / badgesPerView
+    }%)`;
+
+    // Update active dot
+    const activePage = Math.floor(currentPosition / 1);
+    dots.forEach((dot, index) => {
+      dot.classList.toggle("active", index === activePage);
+      // Hide unnecessary dots
+      dot.style.display = index < totalPages ? "block" : "none";
+    });
+
+    // Enable/disable navigation buttons
+    prevBtn.style.opacity = currentPosition <= 0 ? "0.3" : "1";
+    nextBtn.style.opacity =
+      currentPosition >= totalBadges - badgesPerView ? "0.3" : "1";
+  }
+
+  // Set initial badges per view
+  updateBadgesPerView();
+  window.addEventListener("resize", updateBadgesPerView);
+
+  // Navigate one badge at a time (not full page)
+  nextBtn.addEventListener("click", () => {
+    if (currentPosition < totalBadges - badgesPerView) {
+      currentPosition += 1;
+      updateTrackPosition();
+    }
+  });
+
+  prevBtn.addEventListener("click", () => {
+    if (currentPosition > 0) {
+      currentPosition -= 1;
+      updateTrackPosition();
+    }
+  });
+
+  // Navigate with dots (page navigation)
+  dots.forEach((dot, index) => {
+    dot.addEventListener("click", () => {
+      currentPosition = index;
+      updateTrackPosition();
+    });
+  });
+
+  // Handle touch events for mobile swipe
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  carousel.addEventListener(
+    "touchstart",
+    (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    },
+    { passive: true }
+  );
+
+  carousel.addEventListener(
+    "touchend",
+    (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      const swipeDistance = touchEndX - touchStartX;
+
+      if (Math.abs(swipeDistance) > 50) {
+        if (swipeDistance > 0 && currentPosition > 0) {
+          // Swipe right - go to previous
+          currentPosition -= 1;
+          updateTrackPosition();
+        } else if (
+          swipeDistance < 0 &&
+          currentPosition < totalBadges - badgesPerView
+        ) {
+          // Swipe left - go to next
+          currentPosition += 1;
+          updateTrackPosition();
+        }
+      }
+    },
+    { passive: true }
+  );
+}
+
+// Call the function to initialize
+document.addEventListener("DOMContentLoaded", function () {
+  // Your existing code...
+
+  // Initialize the badges carousel
+  initBadgesCarousel();
+});
