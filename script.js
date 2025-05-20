@@ -517,7 +517,7 @@ function initAchievementsCarousel() {
 }
 
 /**
- * Initialize the badges carousel with horizontal scrolling
+ * Initialize the badges carousel with horizontal scrolling and auto-scroll
  */
 function initBadgesCarousel() {
   const carousel = document.querySelector(".badges-carousel");
@@ -532,6 +532,8 @@ function initBadgesCarousel() {
   const totalBadges = badges.length;
   let currentPosition = 0;
   let badgesPerView = 4; // Default for desktop
+  let autoScrollInterval;
+  const autoScrollDelay = 3000; // Time in ms between automatic scrolls
 
   // Update badges per view based on screen size
   function updateBadgesPerView() {
@@ -576,34 +578,72 @@ function initBadgesCarousel() {
       currentPosition >= totalBadges - badgesPerView ? "0.3" : "1";
   }
 
+  // Function to go to next badge
+  function goToNextBadge() {
+    if (currentPosition < totalBadges - badgesPerView) {
+      currentPosition += 1;
+      updateTrackPosition();
+    } else {
+      // Loop back to beginning when reaching the end
+      currentPosition = 0;
+      updateTrackPosition();
+    }
+  }
+
+  // Function to go to previous badge
+  function goToPrevBadge() {
+    if (currentPosition > 0) {
+      currentPosition -= 1;
+      updateTrackPosition();
+    } else {
+      // Loop to end when at beginning and going backwards
+      currentPosition = totalBadges - badgesPerView;
+      updateTrackPosition();
+    }
+  }
+
+  // Start auto-scrolling
+  function startAutoScroll() {
+    // Clear any existing interval first
+    stopAutoScroll();
+    autoScrollInterval = setInterval(goToNextBadge, autoScrollDelay);
+  }
+
+  // Stop auto-scrolling
+  function stopAutoScroll() {
+    if (autoScrollInterval) {
+      clearInterval(autoScrollInterval);
+    }
+  }
+
   // Set initial badges per view
   updateBadgesPerView();
   window.addEventListener("resize", updateBadgesPerView);
 
-  // Navigate one badge at a time (not full page)
+  // Add event listeners for navigation
   nextBtn.addEventListener("click", () => {
-    if (currentPosition < totalBadges - badgesPerView) {
-      currentPosition += 1;
-      updateTrackPosition();
-    }
+    goToNextBadge();
+    stopAutoScroll();
+    startAutoScroll();
   });
 
   prevBtn.addEventListener("click", () => {
-    if (currentPosition > 0) {
-      currentPosition -= 1;
-      updateTrackPosition();
-    }
+    goToPrevBadge();
+    stopAutoScroll();
+    startAutoScroll();
   });
 
-  // Navigate with dots (page navigation)
+  // Navigate with dots
   dots.forEach((dot, index) => {
     dot.addEventListener("click", () => {
       currentPosition = index;
       updateTrackPosition();
+      stopAutoScroll();
+      startAutoScroll();
     });
   });
 
-  // Handle touch events for mobile swipe
+  // Handle touch events
   let touchStartX = 0;
   let touchEndX = 0;
 
@@ -611,6 +651,7 @@ function initBadgesCarousel() {
     "touchstart",
     (e) => {
       touchStartX = e.changedTouches[0].screenX;
+      stopAutoScroll();
     },
     { passive: true }
   );
@@ -624,20 +665,27 @@ function initBadgesCarousel() {
       if (Math.abs(swipeDistance) > 50) {
         if (swipeDistance > 0 && currentPosition > 0) {
           // Swipe right - go to previous
-          currentPosition -= 1;
-          updateTrackPosition();
+          goToPrevBadge();
         } else if (
           swipeDistance < 0 &&
           currentPosition < totalBadges - badgesPerView
         ) {
           // Swipe left - go to next
-          currentPosition += 1;
-          updateTrackPosition();
+          goToNextBadge();
         }
       }
+
+      startAutoScroll();
     },
     { passive: true }
   );
+
+  // Pause auto-scroll when hovering over carousel
+  carousel.addEventListener("mouseenter", stopAutoScroll);
+  carousel.addEventListener("mouseleave", startAutoScroll);
+
+  // Initial call to start auto-scrolling
+  startAutoScroll();
 }
 
 // Call the function to initialize
