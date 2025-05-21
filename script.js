@@ -538,13 +538,37 @@ function initBadgesCarousel() {
   // Update badges per view based on screen size
   function updateBadgesPerView() {
     if (window.innerWidth <= 480) {
-      badgesPerView = 1;
+      badgesPerView = 1; // Show only 1 badge at a time on mobile
+      // Update badge width for single view on mobile
+      badges.forEach((badge) => {
+        const parent = badge.parentElement;
+        parent.style.flex = "0 0 100%";
+        parent.style.maxWidth = "100%";
+      });
     } else if (window.innerWidth <= 767) {
       badgesPerView = 2;
+      // Reset badge width for tablet
+      badges.forEach((badge) => {
+        const parent = badge.parentElement;
+        parent.style.flex = "0 0 50%";
+        parent.style.maxWidth = "50%";
+      });
     } else if (window.innerWidth <= 991) {
       badgesPerView = 3;
+      // Reset badge width for small desktop
+      badges.forEach((badge) => {
+        const parent = badge.parentElement;
+        parent.style.flex = "0 0 33.333%";
+        parent.style.maxWidth = "33.333%";
+      });
     } else {
       badgesPerView = 4;
+      // Reset badge width for large desktop
+      badges.forEach((badge) => {
+        const parent = badge.parentElement;
+        parent.style.flex = "0 0 25%";
+        parent.style.maxWidth = "25%";
+      });
     }
 
     // Update position and track after resize
