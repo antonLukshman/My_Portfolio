@@ -6,7 +6,12 @@ document.addEventListener("DOMContentLoaded", () => {
   // Typing animation for profile titles
   const typingText = document.querySelector(".typing-text");
   const cursor = document.querySelector(".cursor");
-  const titles = ["FAST LEARNER", "BUG HUNTER", "CTF PLAYER", "WEB DEVELOPER"];
+  const titles = [
+    "FAST LEARNER",
+    "BUG HUNTER",
+    "CLOUD & DEVOPS ENTHUSIAST",
+    "WEB DEVELOPER",
+  ];
 
   let titleIndex = 0;
   let charIndex = 0;
