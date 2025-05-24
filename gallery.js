@@ -23,6 +23,8 @@ function initGalleryCube() {
   let isAutoRotating = false;
   let autoRotateInterval;
   let currentFace = 1; // Track the current face (1-6)
+  let rotationMode = "horizontal"; // Track current rotation mode: "horizontal" or "vertical"
+  let horizontalCompletionCount = 0; // Track how many horizontal rotations completed
 
   // Add cursor pointer to cube to indicate it's clickable
   cube.style.cursor = "pointer";
@@ -65,6 +67,7 @@ function initGalleryCube() {
 
     // Remove auto-rotate class to stop animation
     cube.classList.remove("auto-rotate");
+    cube.classList.remove("auto-rotate-vertical");
 
     if (autoRotateInterval) {
       clearInterval(autoRotateInterval);
@@ -89,20 +92,61 @@ function initGalleryCube() {
     // Make sure cube has the correct face showing before starting animation
     updateVisibleFace();
 
-    // Add auto-rotate class to start animation
-    cube.classList.add("auto-rotate");
+    // Add rotation class based on current mode
+    if (rotationMode === "horizontal") {
+      cube.classList.add("auto-rotate");
+      cube.classList.remove("auto-rotate-vertical");
+    } else {
+      cube.classList.add("auto-rotate-vertical");
+      cube.classList.remove("auto-rotate");
+    }
 
     // Cycle through images every 3 seconds
     autoRotateInterval = setInterval(() => {
       // Move to next face
       currentFace = currentFace >= 6 ? 1 : currentFace + 1;
       updateVisibleFace();
+
+      // Check if we completed a full rotation (face 6 back to face 1)
+      if (currentFace === 1) {
+        if (rotationMode === "horizontal") {
+          horizontalCompletionCount++;
+
+          // After one full horizontal rotation, switch to vertical
+          if (horizontalCompletionCount >= 1) {
+            switchRotationMode();
+            horizontalCompletionCount = 0;
+          }
+        } else {
+          // After vertical rotation completes, switch back to horizontal
+          switchRotationMode();
+        }
+      }
     }, 3000); // 3 seconds for better viewing
 
     // Update instructions text
     const instructionsText = document.querySelector(".instructions-text");
     if (instructionsText) {
       instructionsText.textContent = "Click the cube to pause rotation";
+    }
+  }
+
+  /**
+   * Switch rotation mode between horizontal and vertical
+   */
+  function switchRotationMode() {
+    // Toggle rotation mode
+    rotationMode = rotationMode === "horizontal" ? "vertical" : "horizontal";
+
+    // Update rotation classes
+    if (isAutoRotating) {
+      if (rotationMode === "horizontal") {
+        cube.classList.add("auto-rotate");
+        cube.classList.remove("auto-rotate-vertical");
+      } else {
+        cube.classList.add("auto-rotate-vertical");
+        cube.classList.remove("auto-rotate");
+      }
     }
   }
 
